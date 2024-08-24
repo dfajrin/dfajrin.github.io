@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV</title>
+    <title>CV Fajrin</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,11 +12,13 @@
         <h1>DIDA FAJRIN</h1>
     </header>
 
+    <button class="theme-switch" id="theme-switch">Switch Theme</button>
+
     <div class="container">
         <div class="main-info">
             <div class="signature">
                 <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
-                    <text x="10" y="35" font-family="'Dancing Script', cursive" font-size="30" fill="#ff4081">Your Name</text>
+                    <text x="10" y="35" font-family="'Dancing Script', cursive" font-size="30" fill="#ff4081">Dida</text>
                 </svg>
             </div>
             <div class="details">
@@ -24,7 +26,7 @@
                 <p><strong>Email:</strong> didafajrin@gmail.com</p>
                 <p><strong>Phone:</strong> 01590 6358965</p>
                 <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/dfajrin" target="_blank">dfajrin.github.io/</a></p>
             </div>
         </div>
 
@@ -89,9 +91,16 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <p>&copy; 2024 Fajrin. All rights reserved.</p>
     </footer>
+
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+        themeSwitch.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            themeSwitch.textContent = document.body.classList.contains('dark-theme') ? 'Light Theme' : 'Dark Theme';
+        });
+    </script>
 
 </body>
 </html>
-
