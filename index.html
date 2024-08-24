@@ -24,7 +24,7 @@
             <div class="details">
                 <h2>Contact Information</h2>
                 <p><strong>Email:</strong> didafajrin@gmail.com</p>
-                <p><strong>Phone:</strong> 01590 6358965</p>
+                <p><strong>Phone:</strong> 01590 xxxxxx</p>
                 <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
                 <p><strong>GitHub:</strong> <a href="https://github.com/dfajrin" target="_blank">dfajrin.github.io/</a></p>
             </div>
