@@ -1,11 +1,42 @@
+/* General Theme Variables */
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #121212;
+    --container-bg-color: #ffffff;
+    --header-bg-color: #4dd0e1;
+    --header-text-color: #0a2a43;
+    --accent-color: #0a2a43;
+    --link-color: #0a2a43;
+    --link-hover-color: #00796b;
+    --section-bg-color: #e0f7fa;
+    --footer-bg-color: #4dd0e1;
+    --footer-text-color: #0a2a43;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --background-color: #0a2a43;
+    --text-color: #e0f7fa;
+    --container-bg-color: #0e3a57;
+    --header-bg-color: #0d3349;
+    --header-text-color: #b2ebf2;
+    --accent-color: #4dd0e1;
+    --link-color: #4dd0e1;
+    --link-hover-color: #e0f7fa;
+    --section-bg-color: #0d3349;
+    --footer-bg-color: #0d3349;
+    --footer-text-color: #b2ebf2;
+}
+
 /* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark background for a modern retro feel */
-    color: #e0e0e0; /* Light text color for contrast */
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
 /* Container */
@@ -14,24 +45,24 @@ body {
     margin: auto;
     overflow: hidden;
     padding: 20px;
-    background-color: #1e1e1e; /* Darker container background */
+    background-color: var(--container-bg-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
 /* Header */
 header {
-    background: #2c2c2c; /* Dark header background */
-    color: #f0f0f0; /* Light header text */
+    background: var(--header-bg-color);
+    color: var(--header-text-color);
     padding-top: 40px;
     padding-bottom: 20px;
-    border-bottom: 5px solid #ff4081; /* Retro pink accent */
+    border-bottom: 5px solid var(--accent-color);
     text-align: center;
     border-radius: 10px 10px 0 0;
 }
 
 header h1 {
-    font-family: 'Bebas Neue', sans-serif; /* Retro font */
+    font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     margin: 0;
     letter-spacing: 2px;
@@ -53,6 +84,10 @@ header h1 {
     height: auto;
 }
 
+.signature text {
+    fill: var(--accent-color);
+}
+
 /* Main Information */
 .main-info {
     display: flex;
@@ -68,52 +103,52 @@ header h1 {
 .details h2 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #ff4081; /* Retro pink text */
+    color: var(--accent-color);
 }
 
 .details p {
     margin: 5px 0;
     font-weight: bold;
-    color: #e0e0e0; /* Light text for details */
+    color: var(--text-color);
 }
 
 /* Sections */
 .section {
     margin: 20px 0;
     padding: 20px;
-    background: #2c2c2c; /* Darker background for sections */
+    background: var(--section-bg-color);
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .section h3 {
     margin-top: 0;
-    color: #ff4081; /* Retro pink headings */
+    color: var(--accent-color);
     font-size: 22px;
-    font-family: 'Bebas Neue', sans-serif; /* Retro font for headings */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section ul {
     list-style-type: none;
     padding: 0;
-    color: #e0e0e0; /* Light text for lists */
+    color: var(--text-color);
 }
 
 .section ul li {
     margin: 10px 0;
     padding-left: 10px;
-    border-left: 3px solid #ff4081; /* Retro pink border for list items */
+    border-left: 3px solid var(--accent-color);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
-    background: #2c2c2c; /* Dark footer background */
-    color: #f0f0f0; /* Light footer text */
+    background: var(--footer-bg-color);
+    color: var(--footer-text-color);
     margin-top: 40px;
     border-radius: 0 0 10px 10px;
-    border-top: 5px solid #ff4081; /* Retro pink border */
+    border-top: 5px solid var(--accent-color);
 }
 
 footer p {
@@ -124,13 +159,14 @@ footer p {
 
 /* Links */
 a {
-    color: #ff4081; /* Retro pink links */
+    color: var(--link-color);
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #e0e0e0; /* Light color on hover */
+    color: var(--link-hover-color);
 }
 
 /* Responsive Design */
@@ -147,3 +183,23 @@ a:hover {
         text-align: center;
     }
 }
+
+/* Theme Switch Button */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    border: none;
+    color: var(--header-text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch:hover {
+    background: var(--link-hover-color);
+}
+
