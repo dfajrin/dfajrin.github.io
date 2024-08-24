@@ -115,7 +115,7 @@
                 const country = 'DE';
 
                 // Fetch weather information from OpenWeatherMap
-                const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+                const apiKey = '96808ec1cda9f5fa84e2cefcf232482d';
                 const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${apiKey}`);
                 const weatherData = await weatherResponse.json();
 
