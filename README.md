@@ -30,6 +30,13 @@
             </div>
         </div>
 
+	<!-- Weather Information Section -->
+        <div class="section" id="weather-section">
+            <h3>Weather and Local Time in Hamburg</h3>
+            <p id="weather-info">Loading weather information...</p>
+            <p id="time-info">Loading local time...</p>
+        </div>
+
         <div class="section">
             <h3>About Me</h3>
             <p>Passionate Data Scientist with a Bachelor's in Meteorology. Equipped with strong analytical and communication skills, I excel in high-precision data analysis. I have completed online courses in Python for Data Science and The Business Intelligence Analyst on Udemy and visited the Master program in Integrated Climate System Science at the University of Hamburg. Experienced in developing machine learning models for weather forecasting and wind energy potential, I am committed to leveraging data-driven insights to tackle complex challenges.</p>
@@ -100,7 +107,36 @@
             document.body.classList.toggle('dark-theme');
             themeSwitch.textContent = document.body.classList.contains('dark-theme') ? 'Light Theme' : 'Dark Theme';
         });
-    </script>
 
-</body>
-</html>
+	// Weather and Local Time Information for Hamburg
+        async function fetchWeather() {
+            try {
+                const city = 'Hamburg';
+                const country = 'DE';
+
+                // Fetch weather information from OpenWeatherMap
+                const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${apiKey}`);
+                const weatherData = await weatherResponse.json();
+
+                // Display weather information
+                const weatherInfo = document.getElementById('weather-info');
+                weatherInfo.textContent = `Current weather in ${city}, ${country}: ${weatherData.weather[0].description}, ${weatherData.main.temp}°C.`;
+
+                // Display local time
+                const timeInfo = document.getElementById('time-info');
+                const localTime = new Intl.DateTimeFormat('en-GB', {
+                    timeZone: 'Europe/Berlin',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }).format(new Date());
+                timeInfo.textContent = `Local time in ${city}: ${localTime}`;
+            } catch (error) {
+                document.getElementById('weather-info').textContent = 'Unable to fetch weather information.';
+                document.getElementById('time-info').textContent = 'Unable to fetch local time.';
+            }
+        }
+
+        fetchWeather();
+    </script>
