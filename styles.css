@@ -38,25 +38,27 @@ header h1 {
     text-transform: uppercase;
 }
 
+/* Signature Section */
+.signature {
+    flex: 1;
+    max-width: 150px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signature svg {
+    width: 100%;
+    height: auto;
+}
+
 /* Main Information */
 .main-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px 0;
-}
-
-.profile-picture {
-    flex: 1;
-    max-width: 150px;
-    margin-right: 30px;
-}
-
-.profile-picture img {
-    border-radius: 50%;
-    max-width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    border: 5px solid #ff4081; /* Retro pink border */
 }
 
 .details {
@@ -138,15 +140,10 @@ a:hover {
         align-items: center;
         text-align: center;
     }
-    .profile-picture {
+    .signature {
         margin-bottom: 20px;
-    }
-    .profile-picture img {
-        border-radius: 50%;
-        max-width: 120px;
     }
     .details {
         text-align: center;
     }
 }
-
