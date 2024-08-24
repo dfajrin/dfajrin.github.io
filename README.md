@@ -14,8 +14,10 @@
 
     <div class="container">
         <div class="main-info">
-            <div class="profile-picture">
-                <img src="your-photo.jpg" alt="Your Name">
+            <div class="signature">
+                <svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                    <text x="10" y="35" font-family="'Dancing Script', cursive" font-size="30" fill="#ff4081">Your Name</text>
+                </svg>
             </div>
             <div class="details">
                 <h2>Contact Information</h2>
