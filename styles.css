@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background for a modern retro feel */
+    color: #e0e0e0; /* Light text color for contrast */
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #1e1e1e; /* Darker container background */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Header */
+header {
+    background: #2c2c2c; /* Dark header background */
+    color: #f0f0f0; /* Light header text */
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 5px solid #ff4081; /* Retro pink accent */
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif; /* Retro font */
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Main Information */
+.main-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.profile-picture {
+    flex: 1;
+    max-width: 150px;
+    margin-right: 30px;
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 5px solid #ff4081; /* Retro pink border */
+}
+
+.details {
+    flex: 3;
+}
+
+.details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ff4081; /* Retro pink text */
+}
+
+.details p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #e0e0e0; /* Light text for details */
+}
+
+/* Sections */
+.section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #2c2c2c; /* Darker background for sections */
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.section h3 {
+    margin-top: 0;
+    color: #ff4081; /* Retro pink headings */
+    font-size: 22px;
+    font-family: 'Bebas Neue', sans-serif; /* Retro font for headings */
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    color: #e0e0e0; /* Light text for lists */
+}
+
+.section ul li {
+    margin: 10px 0;
+    padding-left: 10px;
+    border-left: 3px solid #ff4081; /* Retro pink border for list items */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #2c2c2c; /* Dark footer background */
+    color: #f0f0f0; /* Light footer text */
+    margin-top: 40px;
+    border-radius: 0 0 10px 10px;
+    border-top: 5px solid #ff4081; /* Retro pink border */
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* Links */
+a {
+    color: #ff4081; /* Retro pink links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #e0e0e0; /* Light color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-picture {
+        margin-bottom: 20px;
+    }
+    .profile-picture img {
+        border-radius: 50%;
+        max-width: 120px;
+    }
+    .details {
+        text-align: center;
+    }
+}
+
