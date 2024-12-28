@@ -67,6 +67,83 @@ async function fetchForecast(latitude, longitude) {
     }
 }
 
+function displayDailyBarChart(forecastData) {
+    if (!forecastData || !forecastData.hourly || !forecastData.hourly.time || !forecastData.hourly.windspeed_10m || !forecastData.hourly.direct_radiation || !forecastData.hourly.diffuse_radiation) {
+        console.error("Invalid forecast data:", forecastData);
+        return;
+    }
+
+    const hourly = forecastData.hourly;
+    const timestamps = hourly.time.map(timeStr => new Date(timeStr));
+    const windSpeeds = hourly.windspeed_10m;
+    const directRadiation = hourly.direct_radiation;
+    const diffuseRadiation = hourly.diffuse_radiation;
+
+    const solarPower = directRadiation.map((d, i) => Math.max(0, d + diffuseRadiation[i]));
+    const windPower = windSpeeds.map(speed => 0.5 * 1.225 * Math.pow(Math.max(0, speed), 3));
+
+    const dailyData = {};
+
+    for (let i = 0; i < timestamps.length; i++) {
+        const date = timestamps[i].toISOString().split('T')[0];
+        if (!dailyData[date]) {
+            dailyData[date] = { solar: 0, wind: 0 };
+        }
+        dailyData[date].solar += solarPower[i];
+        dailyData[date].wind += windPower[i];
+    }
+
+    const dailyLabels = Object.keys(dailyData);
+    const dailySolar = dailyLabels.map(date => dailyData[date].solar);
+    const dailyWind = dailyLabels.map(date => dailyData[date].wind);
+
+    const chartContainer = document.getElementById('daily-bar-chart-container');
+
+    // Clear existing chart if it exists
+    while (chartContainer.firstChild) {
+        chartContainer.removeChild(chartContainer.firstChild);
+    }
+
+    const barChartCanvas = document.createElement('canvas');
+    barChartCanvas.id = 'dailyBarChart';
+    chartContainer.appendChild(barChartCanvas);
+
+    new Chart(barChartCanvas, {
+        type: 'bar',
+        data: {
+            labels: dailyLabels,
+            datasets: [
+                {
+                    label: 'Daily Solar Energy (Wh/m²)',
+                    data: dailySolar,
+                    backgroundColor: 'orange',
+                },
+                {
+                    label: 'Daily Wind Energy (Wh/m²)',
+                    data: dailyWind,
+                    backgroundColor: 'blue',
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Energy (Wh/m²)'}
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Daily Accumulated Energy'
+                }
+            }
+        }
+    });
+}
+
 function displayForecast(data) {
     forecastData = data;
     const hourly = forecastData.hourly;
@@ -80,6 +157,7 @@ function displayForecast(data) {
 
     displayChart(timestamps, solarPower, windPower); // Display chart ONCE when data is fetched
     displayTables(); // Display tables initially
+    displayDailyBarChart(data); // Call this function after displaying the chart and tables
 }
 
 function displayDataSubset() {
