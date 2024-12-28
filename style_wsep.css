@@ -1,0 +1,247 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #e0f2f7, #ffffff);
+    color: #333;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+body.dark-mode { /* Styles for dark mode */
+    background: linear-gradient(to bottom, #111827, #1f2937); /* Darker gradient */
+    color: #eee;
+}
+
+h1 {
+    text-align: center;
+    color: #0077be;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    flex: 1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .container {
+    background-color: rgba(31, 41, 55, 0.95); /* Slightly less transparent in dark mode */
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: rgba(224, 239, 247, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 119, 190, 0.3);
+    margin-bottom: 20px;
+
+    background-color: rgba(55, 65, 81, 0.6); /* Darker input area background */
+    border: 1px solid rgba(107, 114, 128, 0.5);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .input-area {
+    background-color: rgba(55, 65, 81, 0.8);
+    border: 1px solid rgba(107, 114, 128, 0.8);
+}
+
+label {
+    font-weight: 500;
+    color: #444;
+    white-space: nowrap;
+
+    color: #ddd; /* Lighter label text in dark mode */
+    transition: color 0.3s ease;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid rgba(0, 119, 190, 0.3);
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.05);
+
+    border: 1px solid rgba(107, 114, 128, 0.5);
+    background-color: rgba(40, 48, 60, 0.7);
+    color: #eee;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode input[type="text"] {
+    border: 1px solid rgba(107, 114, 128, 0.8);
+    background-color: rgba(40, 48, 60, 0.9);
+}
+
+
+button {
+    background-color: #0077be;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+body.dark-mode button:hover {
+    background-color: #1d4ed8;
+}
+
+#loading,
+#error-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loading {
+    font-style: italic;
+    color: gray;
+}
+
+#error-message {
+    color: #dc3545;
+}
+
+.data-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.data-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.table-container {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.table-column {
+    overflow-x: auto;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+    font-size: inherit;
+    background-color: rgba(255, 255, 255, 0.5); /* Added for consistent background */
+    transition: background-color 0.3s ease;
+
+}
+
+th {
+    background-color: rgba(55, 65, 81, 0.7); /* Darker table header */
+    color: #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+
+body.dark-mode th {
+    background-color: rgba(75, 85, 99, 0.9);
+}
+body.dark-mode td {
+    background-color: rgba(55, 65, 81, 0.7);
+}
+
+select {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    border: 1px solid rgba(107, 114, 128, 0.5);
+    background-color: rgba(40, 48, 60, 0.7);
+    color: #eee;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode select {
+    border: 1px solid rgba(107, 114, 128, 0.8);
+    background-color: rgba(40, 48, 60, 0.9);
+}
+
+footer {
+    background-color: rgba(52, 58, 64, 0.8);
+    color: #eee;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode footer {
+    background-color: #1f2937; /* Darker footer background */
+    color: #ddd;
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) {
+    .data-area {
+        flex-direction: row;
+    }
+
+    .data-container {
+        margin-bottom: 0;
+    }
+
+    .table-container {
+        width: calc(20% - 20px);
+        max-height: 400px;
+    }
+
+    #chartContainer {
+        width: calc(60% - 20px);
+    }
+}

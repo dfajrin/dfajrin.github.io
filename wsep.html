@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind & Solar Energy Forecast</title>
+    <link rel="stylesheet" href="style_wsep.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Wind & Solar Energy Forecast</h1>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+
+        <div class="input-area">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" value="London" placeholder="e.g., London or 51.5,-0.1">
+            <button onclick="getForecast()">Get Forecast</button>
+        </div>
+
+        <div id="loading">Loading...</div>
+        <div id="error-message"></div>
+
+        <div class="data-area" id="mainContent" style="display: none;">
+            <div id="solarTableContainer" class="data-container table-container">
+                <h2>Hourly Solar Data</h2>
+                <select id="solar-data-dropdown"></select>
+                <div id="solarTable" class="table-column"></div>
+            </div>
+            <div id="chartContainer" class="data-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="windTableContainer" class="data-container table-container">
+                <h2>Hourly Wind Data</h2>
+                <select id="wind-data-dropdown"></select>
+                <div id="windTable" class="table-column"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Fajrin, 2024 Wind & Solar Forecast. All rights reserved.
+    </footer>
+
+    <script src="script_wsep.js"></script>
+</body>
+</html>
