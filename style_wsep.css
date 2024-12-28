@@ -112,6 +112,10 @@ button:hover {
     background-color: #2563eb;
 }
 
+body.dark-mode button:hover {
+    background-color: #1d4ed8;
+}
+
 .description {
     margin-bottom: 20px;
     padding: 15px;
@@ -134,10 +138,6 @@ body.dark-mode .description {
 
 .description strong {
     font-weight: bold;
-}
-
-body.dark-mode button:hover {
-    background-color: #1d4ed8;
 }
 
 #loading,
