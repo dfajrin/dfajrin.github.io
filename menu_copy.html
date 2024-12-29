@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind & Solar Energy Forecast</title>
+    <link rel="stylesheet" href="menu_copy.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@latest/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Wind & Solar Energy Forecast</h1>
+        <div id="theme-toggle" class="dark-mode-toggle">  <div class="circle"></div> </div>
+        
+        <div class="description">
+            <p>This webpage provides a forecast of wind and solar energy potential for a given location. Enter a location (city name or coordinates) and select a forecast duration (3, 7, 14, or 16 days) to retrieve hourly data, visualized in a chart and tables. The daily accumulated energy is also displayed in a bar chart below.</p>
+            <p>You can also select a specific date to retrieve historical forecast data for that date and the selected duration. Please note that historical data availability may vary.</p>
+            <p><strong>Data Sources:</strong> The forecast is based on weather conditions and predictive models provided by Open-Meteo. It considers factors such as wind speed, direct and diffuse solar radiation.</p>
+            <p><strong>Forecast/Historical Data:</strong> The data predicts the potential energy output (in W/m² for hourly data and Wh/m² for daily accumulated energy) assuming ideal energy conversion. Actual energy production will depend on the efficiency of the energy conversion systems (e.g., solar panels, wind turbines). The standard forecast API provides data for up to 7 days. For longer durations or when a specific date is selected, the Historical Weather API is used.</p>
+            <p>&copy; Fajrin,</p>
+        </div>
+
+        <div class="input-area">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" value="London" placeholder="e.g., London or 51.5,-0.1">
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="forecast-days">Forecast Days:</label> <select id="forecast-days">
+                <option value="3">3 Days</option>
+                <option value="7">7 Days</option>
+                <option value="14">14 Days</option>
+                <option value="16">16 Days</option>
+            </select>
+
+            <button onclick="getForecast()">Get Forecast</button>
+        </div>
+
+        <div id="loading">Loading...</div>
+        <div id="error-message"></div>
+
+        <div class="data-area" id="mainContent" style="display: none;">
+            <div id="solarTableContainer" class="data-container table-container">
+                <h2>Hourly Solar Data</h2>
+                <select id="solar-data-dropdown"></select>
+                <div id="solarTable" class="table-column"></div>
+            </div>
+            <div id="chartContainer" class="data-container">
+                 <canvas id="myChart"></canvas>
+            </div>
+            <div id="windTableContainer" class="data-container table-container">
+                <h2>Hourly Wind Data</h2>
+                <select id="wind-data-dropdown"></select>
+                <div id="windTable" class="table-column"></div>
+            </div>
+        </div>
+        <div id="daily-bar-chart-container" class="data-container">
+            <h2>Daily Accumulated Energy</h2> <select id="bar-chart-type">
+                <option value="both">Both Wind & Solar</option>
+                <option value="solar">Solar Only</option>
+                <option value="wind">Wind Only</option>
+            </select>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Fajrin, 2024 Wind & Solar Forecast. All rights reserved.
+    </footer>
+
+    <script src="menu_copy.js"></script>
+</body>
+</html>
