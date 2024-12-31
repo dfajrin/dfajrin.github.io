@@ -1,0 +1,351 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0f2f7, #ffffff);
+    color: #333;
+}
+
+body.dark-mode { /* Styles for dark mode */
+    background: linear-gradient(to bottom, #111827, #1f2937); /* Darker gradient */
+    color: #eee;
+}
+
+header {
+    background-color: #fff;
+    padding: 1em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+.main-content {
+    max-width: 1300px;
+    margin:20px auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 0;
+}
+
+.cv h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.data-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /*max-width: 800px;*/
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.cv {
+    width: 100%; /* Occupy full width of the data container */
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    color: #222;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.section p {
+    text-align: justify;
+}
+
+.experience h3, .education h3 {
+    margin-bottom: 0.5em;
+}
+
+.experience p, .education p {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 8px;
+    background-color: #077bff;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.skill-level[data-level="90"] {
+    width: 90%;
+}
+
+.skill-level[data-level="80"] {
+    width: 80%;
+}
+
+.skill-level[data-level="70"] {
+    width: 70%;
+}
+
+.skill-level[data-level="60"] {
+    width: 60%;
+}
+
+.skill-level[data-level="50"] {
+    width: 50%;
+}
+
+.languages-list {
+    list-style: none;
+    padding: 0;
+}
+
+.languages-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.languages-list .skill-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.languages-list .skill-level {
+    height: 8px;
+    background-color: #007bff;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.languages-list .skill-level[data-level="100"] {
+    width: 100%;
+}
+
+.languages-list .skill-level[data-level="90"] {
+    width: 90%;
+}
+
+.languages-list .skill-level[data-level="80"] {
+    width: 80%;
+}
+
+.languages-list .skill-level[data-level="70"] {
+    width: 70%;
+}
+
+.languages-list .skill-level[data-level="40"] {
+    width: 40%;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .skill-bar {
+    background-color: #555;
+}
+
+body.dark-mode .skill-level {
+    background-color: #077bff; /* Lighter blue in dark mode */
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333; /* Dark background color */
+    color: #eeeeee; /* Light text color */
+}
+
+body.dark-mode .data-container {
+    border-color: #555; /* Darker border for data containers */
+    background-color: #444; /* Darker background for data containers */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+}
+
+body.dark-mode .cv {
+    color: #09033f; /* Light text color for CV content */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #09033f; /* Lighter heading color */
+}
+
+body.dark-mode .section {
+    border-bottom-color: #555; /* Darker separator lines */
+}
+
+body.dark-mode .experience p,
+body.dark-mode .education p {
+    color: #aaa; /* Slightly lighter text for dates/descriptions */
+}
+
+body.dark-mode footer {
+    background-color: #222; /* Darker footer background */
+}
+
+/* Two-page book-like layout */
+.book-container {
+    display: flex;
+    margin: 8px auto;
+    max-width: 1600px;
+}
+
+.page {
+    width: 48%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill {
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-left: 20px;
+}
