@@ -1,33 +1,63 @@
-# Hi, I'm Dida 👋
+## Dida Fajrin
 
-Welcome to my GitHub profile! I'm a meteorologist with a passion for IoT and Machine Learning. Whether it's data-driven forecasting, python, html, css, javascript, I'm all about creating impactful and innovative solutions.
+**Analytical and solution-oriented meteorologist with a passion for data analysis and a strong background in natural sciences.**
 
-## 🚀 What I'm Working On
+**Summary**
 
-- **[Project 1 Name]**: Brief description of what this project does or aims to achieve. Mention any interesting tech stacks or methodologies you're using.
-- **[Project 2 Name]**: Brief description of this project. Highlight any unique challenges you're tackling or problems you're solving.
-- **Open Source Contributions**: Actively contributing to projects like [Project Name] and [Project Name], where I focus on [what you contribute].
+I possess a strong grasp of complex data sets, particularly in the analysis and automation of large meteorological datasets.  I am proficient in Python and have experience creating dashboards and reports for data-driven decision making.  My key strengths include a quick grasp of new concepts, a strong understanding of numbers, and a high willingness to learn.  I am a team player with excellent communication skills and the ability to coordinate across departments.  I am fluent in German and English, with intercultural competence to round out my profile.
 
-## 🌱 What I'm Learning
+**Skills**
 
-I'm constantly exploring and learning new things. Currently, I'm diving into:
-- **[Technology or Skill 1]**: How it enhances what I do.
-- **[Technology or Skill 2]**: Why it's important for my current or future projects.
+* **Programming Languages:**
+    * Python (Data Science, Analysis, Automation) (Highly Proficient)
+    * MS Office (Proficient)
+    * HTML (Intermediate)
+    * CSS (Basic)
+    * JavaScript (Basic)
+* **Data Analysis & Visualization:** (Highly Proficient)
+* **Dashboard & Reporting:** (Proficient)
+* **Analytical Thinking:** (Highly Proficient)
+* **Willingness to Learn:** (Expert)
+* **AI & Machine Learning:** (Intermediate)
+* **Other Skills:** Teamwork, Communication, Intercultural Competence
 
-## 📫 How to Reach Me
+**Languages**
 
-- **Email**: [Your Email Address]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **Twitter**: [Your Twitter Handle]
+* German (Very Good)
+* English (Fluent)
+* Japanese (Advanced)
+* Bahasa Indonesia (Native)
+* Polish (Basic)
 
-## 💬 Let's Collaborate
+**Education**
 
-I'm always open to collaborating on exciting projects or discussing innovative ideas. Feel free to reach out if you're interested in working together on something awesome!
+* **Bachelor in Meteorology** (Institut Teknologi Bandung, Indonesia) [2009-2014]
+* **Exchange Semester** (Nagoya University, Japan) [2013]
+* **Master's Degree in Climate Science (incomplete)** (Universität Hamburg) [2015-2018]
+* **Udemy Courses:**
+    * The Business Intelligence Analyst Course [2023]
+    * Python for Data Science, Machine Learning & Visualization [2023]
 
-## ⚡ Fun Fact
+**Professional Experience**
 
-[Include a fun or interesting fact about yourself – something unique or quirky!]
+* **Research Assistant** [2014-2018]
+    * Developed and implemented data analysis methods for meteorological datasets.
+    * Utilized Python and Matlab for data analysis, statistical modeling, and visualization.
+    * Automated data processing workflows to enhance research efficiency.
+    * Created reports and presentations for internal and external stakeholders.
+    * Collaborated with interdisciplinary teams to achieve research goals.
+* **Project Manager in Wind Energy Potential Analysis** [2018-2020]
+    * Led a team analyzing wind energy potential in Sulawesi, Indonesia.
+    * Managed data collection, preprocessing, and analysis.
+    * Developed data models to assess wind energy potential.
+    * Created reports and presentations with visualizations for clients.
+    * Communicated and coordinated across departments with internal and external partners.
+* **Business Development in Solar and Wind Energy Data Driven Forecast** [2020-2023]
+    * Led the development of data-driven forecasts for solar and wind energy potential.
+    * Analyzed large datasets to identify business opportunities and inform stakeholders.
+    * Created reports and presentations to communicate forecasts and their business impact.
+    * Developed data-driven solutions to support business decisions.
 
----
+**Copyright**
 
-_Thanks for visiting my GitHub profile! Feel free to check out my repositories and drop me a message if you want to connect._ 😊
+© 2023 Dida Fajrin
