@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurikulum & Harga Kursus Bahasa Jerman - Delta Global Connection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Warna bendera Jerman: Hitam, Merah, Emas */
+            --black: #000000;
+            --red: #DD0000;
+            --gold: #FFCC00; /* Atau #FFD700 untuk Gold yang lebih pekat */
+
+            --primary-color: var(--red);
+            --secondary-color: var(--black);
+            --accent-color: var(--gold);
+            --text-dark: #333333;
+            --text-light: #f8f8f8;
+            --bg-gradient-start: #f8f8f8; /* Hampir putih */
+            --bg-gradient-end: #e0e0e0;   /* Abu-abu terang */
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        header p strong {
+            color: var(--accent-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 12px;
+            margin-top: 45px;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: '👉 '; /* Simbol untuk Gen Z */
+            margin-left: 20px;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        ol li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--primary-color); /* Menggunakan warna merah untuk penekanan */
+        }
+
+        .level-duration {
+            background-color: var(--gold); /* Emas sebagai latar belakang durasi */
+            color: var(--black); /* Teks hitam di atas emas */
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-top: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .note {
+            background-color: #fcfcfc; /* Lebih terang dari abu-abu */
+            border-left: 6px solid var(--red); /* Garis merah */
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: var(--border-radius);
+            font-size: 0.95em;
+            color: var(--text-dark);
+        }
+        .note strong {
+            color: var(--red);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+	/* --- New styles for footer contacts and back button --- */
+        .contact-info-footer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #cccccc; /* Garis putus-putus */
+        }
+
+        .contact-info-footer a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color); /* Warna link kontak */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-info-footer a:hover {
+            color: var(--secondary-color); /* Warna hover untuk kontak */
+            transform: translateY(-2px);
+        }
+
+        .contact-info-footer .icon-small {
+            font-size: 1.4em;
+            color: var(--accent-color); /* Warna ikon kontak */
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: var(--primary-color); /* Warna tombol kembali */
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-home:hover {
+            background-color: var(--secondary-color); /* Warna hover tombol kembali */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* --- Two-Column Layout (Screen) --- */
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1fr; /* Default: 1 column on small screens */
+            gap: 20px; /* Spasi antar kolom */
+            margin-top: 20px;
+        }
+
+        .two-column-section h4 {
+            grid-column: 1 / -1; /* Header spans all columns by default */
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .two-column-section > div {
+            padding-right: 10px; /* Sedikit padding agar konten tidak menempel ke batas kolom */
+        }
+
+        @media (min-width: 768px) { /* Untuk layar yang lebih besar, jadikan 2 kolom */
+            .two-column-section {
+                grid-template-columns: 1fr 1fr; /* 2 kolom sama lebar */
+            }
+            .two-column-section.split-header h4 {
+                grid-column: span 1; /* Biarkan header berada di kolom pertamanya */
+            }
+        }
+
+        /* Styling untuk sub-bagian di dalam kolom */
+        .column-content ul, .column-content ol {
+            margin-left: 0;
+            padding-left: 20px; /* Indentasi untuk list di dalam kolom */
+        }
+        .column-content strong {
+            color: var(--primary-color);
+        }
+
+        /* --- Lexikon Table --- */
+        .lexikon-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+            border-radius: var(--border-radius);
+            overflow: hidden; /* For rounded corners on table */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lexikon-table th, .lexikon-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .lexikon-table th {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .lexikon-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .lexikon-table tr:hover {
+            background-color: #f0f0f0;
+        }
+        .lexikon-table h4 {
+            color: var(--secondary-color); /* Hitam untuk judul tabel */
+            margin-top: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* --- Price Table --- */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .price-table caption {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: left;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .price-table th, .price-table td {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .price-table th {
+            background-color: var(--secondary-color); /* Hitam */
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .price-table thead th:first-child {
+            background-color: var(--primary-color); /* Merah untuk "Tingkat" */
+            color: var(--text-light);
+        }
+
+        .price-table tbody tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .price-table td strong {
+            color: var(--secondary-color); /* Hitam untuk harga */
+            font-size: 1.1em;
+        }
+
+        /* Responsive adjustments for tables */
+        @media (max-width: 600px) {
+            .price-table, .lexikon-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto; /* Enable horizontal scrolling */
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            }
+            .price-table thead, .lexikon-table thead {
+                display: none; /* Hide header on small screens for vertical layout */
+            }
+            .price-table tbody tr, .lexikon-table tbody tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #e0e0e0;
+                border-radius: var(--border-radius);
+                padding: 10px;
+            }
+            .price-table td, .lexikon-table td {
+                display: block;
+                text-align: right;
+                border: none;
+                padding: 8px 15px;
+                position: relative;
+            }
+            .price-table td::before, .lexikon-table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: var(--primary-color);
+                margin-right: 10px;
+            }
+            .price-table td:last-child, .lexikon-table td:last-child {
+                border-bottom: 0;
+            }
+        }
+
+
+        /* --- Print Specific Styles --- */
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 1cm;
+                max-width: 100%;
+                border-radius: 0;
+                transform: none;
+            }
+
+            header {
+                border-bottom-color: #000000;
+            }
+
+            header h1, header p, h2, h3, h4 {
+                color: #000000 !important;
+            }
+
+            .level-duration {
+                background-color: #f0f0f0 !important;
+                color: #333333 !important;
+                box-shadow: none;
+            }
+
+            .note {
+                background-color: #f0f8ff !important;
+                border-left-color: #888888 !important;
+            }
+            .note strong {
+                color: #333333 !important;
+            }
+
+            .two-column-section {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                page-break-inside: avoid;
+            }
+
+            .two-column-section > div {
+                padding-right: 0;
+                box-sizing: border-box;
+            }
+
+            ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            ul li {
+                padding-left: 0;
+            }
+
+            h2, h3, h4, .level-duration, .lexikon-table, .price-table {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            .lexikon-table th, .price-table th {
+                background-color: #e0e0e0 !important;
+                color: #333333 !important;
+            }
+            .price-table thead th:first-child {
+                background-color: #d0d0d0 !important;
+            }
+            .lexikon-table td, .price-table td {
+                color: #000000 !important;
+            }
+
+	    .contact-info-footer, .back-to-home {
+                display: none; /* Sembunyikan di versi cetak */
+            }
+        }
+
+        /* Responsive adjustments (continued from previous version) */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px 15px;
+                padding: 25px 30px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            h4 {
+                font-size: 1.1em;
+            }
+	    .contact-info-footer {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .level-duration {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kurikulum Bahasa Jerman</h1>
+            <p>Disusun oleh <strong>Delta Global Connection</strong></p>
+            <p>"Connecting you to the world"</p>
+        </header>
+
+        <p>Kurikulum ini menyediakan gambaran komprehensif tentang isi dan tujuan pembelajaran untuk kursus Bahasa Jerman dari A0 hingga B2, yang disesuaikan dengan **Kerangka Acuan Umum Eropa untuk Bahasa (CEFR)**. Kurikulum ini modular dan dirancang agar setiap level dapat diselesaikan dalam <strong>3 bulan</strong> dengan <strong>2 kali pertemuan per minggu</strong>.</p>
+
+        <h2>Tujuan Pembelajaran Umum untuk Semua Tingkat</h2>
+        <ul>
+            <li><strong>Kompetensi Komunikatif:</strong> Kalian akan mampu berkomunikasi lisan dan tulisan dalam berbagai situasi sehari-hari.</li>
+            <li><strong>Kompetensi Antarbudaya:</strong> Dapatkan wawasan mendalam tentang budaya, adat istiadat, dan kehidupan sehari-hari di Jerman.</li>
+            <li><strong>Kompetensi Strategis:</strong> Kembangkan strategi belajar yang efektif dan kemampuan untuk belajar mandiri.</li>
+            <li><strong>Ketepatan Bahasa:</strong> Kuasai struktur tata bahasa penting dan perbanyak kosakata kalian.</li>
+        </ul>
+
+        ---
+
+        <h2>Tingkat A0 (Pemula Tanpa Pengetahuan Sebelumnya)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 2.5 Unit Pelajaran (112.5 menit) = Total 60 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Mampu memperkenalkan diri dan orang lain.</li>
+                    <li>Mampu menjawab dan mengajukan pertanyaan sederhana tentang diri sendiri.</li>
+                    <li>Menyapa dan mengucapkan selamat tinggal.</li>
+                    <li>Memahami dan menggunakan angka, alfabet, serta jumlah sederhana.</li>
+                    <li>Memahami dan mengikuti instruksi sederhana.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Perkenalan diri, kebangsaan, asal, tempat tinggal, usia.</li>
+                    <li>Keluarga dan teman.</li>
+                    <li>Makan dan minum (memesan di restoran).</li>
+                    <li>Belanja (produk sederhana).</li>
+                    <li>Waktu luang (hobi, aktivitas sederhana).</li>
+                    <li>Waktu dan bagian hari.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa:</h4>
+                <ul>
+                    <li><strong>Kata Ganti Orang</strong> dalam kasus nominatif.</li>
+                    <li><strong>Kata Kerja Bentuk Sekarang (Präsens)</strong> untuk kata kerja reguler dan penting yang tidak beraturan (sein, haben).</li>
+                    <li><strong>Struktur Kalimat:</strong> Kalimat pernyataan, pertanyaan W (W-Fragen), pertanyaan Ya/Tidak.</li>
+                    <li><strong>Artikel:</strong> Artikel tentu dan tak tentu dalam kasus nominatif.</li>
+                    <li><strong>Negasi</strong> dengan "nicht" dan "kein".</li>
+                    <li><strong>Angka</strong> hingga 100.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata:</h4>
+                <ul>
+                    <li>Frasa salam dasar, perkenalan.</li>
+                    <li>Anggota keluarga, profesi.</li>
+                    <li>Makanan, minuman, warna, pakaian (sederhana).</li>
+                    <li>Benda sehari-hari, angka, hari dalam seminggu, bulan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>Lexikon A0 - Grundwortschatz</h4></th>
+                </tr>
+                <tr>
+                    <th>Thema / Kategorie</th>
+                    <th>Beispiele</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Thema / Kategorie">Begrüßung und Verabschiedung</td>
+                    <td data-label="Beispiele">Hallo, Guten Tag, Auf Wiedersehen, Tschüs</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Persönliche Informationen</td>
+                    <td data-label="Beispiele">Ich heiße..., Ich komme aus..., Ich wohne in..., Wie alt sind Sie?</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Zahlen</td>
+                    <td data-label="Beispiele">eins, zwei, drei, zehn, zwanzig</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Familie</td>
+                    <td data-label="Beispiele">die Mutter, der Vater, der Bruder, die Schwester</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Essen und Trinken</td>
+                    <td data-label="Beispiele">das Brot, das Wasser, der Kaffee, essen, trinken</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Tingkat A1 (Penggunaan Bahasa Dasar)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 3.5-4 Unit Pelajaran (157.5-180 menit) = Total 84-96 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Memahami dan menggunakan ekspresi akrab dan sehari-hari serta kalimat yang sangat sederhana.</li>
+                    <li>Mampu berkomunikasi dalam situasi sehari-hari yang sederhana jika lawan bicara berbicara lambat dan jelas.</li>
+                    <li>Mengisi kartu pos sederhana, formulir dengan informasi pribadi.</li>
+                    <li>Memberikan informasi sederhana tentang diri sendiri dan orang lain.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Kehidupan sehari-hari dan rutinitas (jadwal harian).</li>
+                    <li>Tempat tinggal (mendeskripsikan apartemen, furnitur).</li>
+                    <li>Belanja (pakaian, makanan, menanyakan harga).</li>
+                    <li>Pekerjaan dan profesi.</li>
+                    <li>Waktu luang dan hobi.</li>
+                    <li>Kesehatan dan kunjungan ke dokter (informasi sederhana).</li>
+                    <li>Perjalanan dan transportasi (menanyakan arah).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa:</h4>
+                <ul>
+                    <li><strong>Kasus:</strong> Nominatif dan Akusatif (kata benda, kata ganti, artikel).</li>
+                    <li><strong>Kata Kerja Modal</strong> (können, wollen, müssen, dürfen, sollen, mögen).</li>
+                    <li><strong>Preposisi</strong> dengan Akusatif.</li>
+                    <li><strong>Kata Kerja Lampau (Perfekt)</strong> dengan "haben" dan "sein" (kata kerja reguler dan penting yang tidak beraturan).</li>
+                    <li><strong>Keterangan Waktu</strong> (gestern, heute, morgen, adverbia waktu).</li>
+                    <li><strong>Komparatif</strong> dan <strong>Superlatif</strong> (sederhana).</li>
+                    <li><strong>Kalimat Perintah (Imperativ)</strong>.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata:</h4>
+                <ul>
+                    <li>Kosakata yang diperluas untuk topik-topik yang disebutkan.</li>
+                    <li>Sifat-sifat (kata sifat).</li>
+                    <li>Arah, lokasi.</li>
+                    <li>Kata kerja sehari-hari.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>Lexikon A1 - Erweiterter Grundwortschatz</h4></th>
+                </tr>
+                <tr>
+                    <th>Thema / Kategorie</th>
+                    <th>Beispiele</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Thema / Kategorie">Alltag und Routine</td>
+                    <td data-label="Beispiele">aufstehen, frühstücken, arbeiten, nach Hause gehen</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Wohnen</td>
+                    <td data-label="Beispiele">das Haus, die Wohnung, das Zimmer, das Bett, der Tisch</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Einkaufen</td>
+                    <td data-label="Beispiele">das Geld, der Preis, kaufen, verkaufen, die Kleidung</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Berufe</td>
+                    <td data-label="Beispiele">der Arzt, die Lehrerin, der Student, der Ingenieur</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Freizeit und Hobbys</td>
+                    <td data-label="Beispiele">lesen, Sport treiben, Musik hören, Freunde treffen</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Wege und Richtungen</td>
+                    <td data-label="Beispiele">geradeaus, links, rechts, der Bahnhof, die Haltestelle</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Tingkat A2 (Penggunaan Bahasa Elementer)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 5-6 Unit Pelajaran (225-270 menit) = Total 120-144 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Memahami kalimat dan ekspresi yang sering digunakan yang berkaitan dengan bidang-bidang yang relevan (misalnya, informasi pribadi dan keluarga, belanja, pekerjaan, lingkungan terdekat).</li>
+                    <li>Mampu berkomunikasi dalam situasi rutin yang sederhana yang melibatkan pertukaran informasi langsung tentang hal-hal yang akrab dan umum.</li>
+                    <li>Memberikan informasi langsung dan sederhana tentang topik yang akrab.</li>
+                    <li>Membaca dan menulis teks pendek dan sederhana (misalnya, email, SMS, surat pribadi singkat).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Keluarga dan hubungan.</li>
+                    <li>Media dan komunikasi (telepon, email).</li>
+                    <li>Pekerjaan dan pendidikan (lamaran kerja, magang).</li>
+                    <li>Kesehatan dan gaya hidup.</li>
+                    <li>Layanan (bank, kantor pos, kantor pemerintah).</li>
+                    <li>Hari libur dan festival di Jerman.</li>
+                    <li>Lingkungan dan alam.</li>
+                    <li>Masa lalu (berbicara tentang pengalaman).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa:</h4>
+                <ul>
+                    <li><strong>Kasus Dativ</strong> (kata benda, kata ganti, artikel).</li>
+                    <li><strong>Preposisi Dua Arah</strong> dengan Dativ dan Akusatif.</li>
+                    <li><strong>Kasus Genitiv</strong> (penggunaan sederhana, misalnya dengan nama).</li>
+                    <li><strong>Kata Kerja Lampau (Präteritum)</strong> dari kata kerja modal dan "sein" dan "haben".</li>
+                    <li><strong>Konjungtor</strong> (und, aber, oder, denn, weil, dass).</li>
+                    <li><strong>Anak Kalimat</strong> dengan "weil", "dass", "wenn".</li>
+                    <li><strong>Kata Kerja Refleksif</strong>.</li>
+                    <li><strong>Kalimat Pasif</strong> (bentuk sederhana dalam present tense).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata:</h4>
+                <ul>
+                    <li>Kosakata yang diperluas untuk topik-topik yang disebutkan.</li>
+                    <li>Kata sifat untuk mendeskripsikan perasaan dan pendapat.</li>
+                    <li>Ungkapan dan frasa untuk percakapan sehari-hari.</li>
+                    <li>Kosakata untuk deskripsi dan laporan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>Lexikon A2 - Aufbauwortschatz</h4></th>
+                </tr>
+                <tr>
+                    <th>Thema / Kategorie</th>
+                    <th>Beispiele</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Thema / Kategorie">Gefühle und Meinungen</td>
+                    <td data-label="Beispiele">glücklich, traurig, wütend, ich finde, dass..., meiner Meinung nach</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Kommunikation</td>
+                    <td data-label="Beispiele">anrufen, eine E-Mail schreiben, sprechen, diskutieren</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Gesundheit</td>
+                    <td data-label="Beispiele">krank, der Kopfschmerz, zum Arzt gehen, Medikamente nehmen</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Dienstleistungen</td>
+                    <td data-label="Beispiele">die Bank, die Post, das Rathaus, ein Formular ausfüllen</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Vergangenheit</td>
+                    <td data-label="Beispiele">gestern, letzte Woche, vor zwei Jahren, als Kind</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Umfeld und Natur</td>
+                    <td data-label="Beispiele">der Wald, der See, die Blumen, die Umwelt</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Tingkat B1 (Penggunaan Bahasa Mandiri)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 7-8 Unit Pelajaran (315-360 menit) = Total 168-192 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Memahami poin-poin utama ketika bahasa standar yang jelas digunakan dan ketika topiknya adalah hal-hal yang akrab dari pekerjaan, sekolah, waktu luang, dll.</li>
+                    <li>Mengatasi sebagian besar situasi yang mungkin ditemui saat bepergian di wilayah berbahasa Jerman.</li>
+                    <li>Mengungkapkan diri secara koheren tentang topik yang akrab dan bidang minat pribadi.</li>
+                    <li>Melaporkan pengalaman dan peristiwa, menggambarkan impian, harapan, dan tujuan, serta memberikan alasan atau penjelasan singkat untuk rencana dan pandangan.</li>
+                    <li>Menulis surat dan email tentang topik yang akrab.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Perjalanan dan pariwisata (pemesanan hotel, keluhan).</li>
+                    <li>Pekerjaan dan profesi (wawancara kerja, rutinitas kantor).</li>
+                    <li>Pendidikan dan pelatihan lanjutan (kuliah, kursus).</li>
+                    <li>Media (berita, film, buku).</li>
+                    <li>Masyarakat dan politik (diskusi sederhana).</li>
+                    <li>Acara budaya.</li>
+                    <li>Mengungkapkan pendapat dan argumen.</li>
+                    <li>Mendeskripsikan masalah dan mengusulkan solusi.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa:</h4>
+                <ul>
+                    <li><strong>Menguasai semua Kasus</strong> (Nominatif, Akusatif, Dativ, Genitiv) dengan percaya diri.</li>
+                    <li><strong>Kata Kerja Lampau (Präteritum)</strong> dari semua kata kerja penting.</li>
+                    <li><strong>Kata Kerja Lampau Sempurna (Plusquamperfekt)</strong>.</li>
+                    <li><strong>Konjunktiv II</strong> untuk keinginan ireal, saran, dan permintaan sopan.</li>
+                    <li><strong>Kalimat Pasif</strong> dalam semua bentuk waktu (present, preteritum, perfekt).</li>
+                    <li><strong>Kalimat Relatif</strong> (Nominatif, Akusatif, Dativ).</li>
+                    <li><strong>Konjungtor</strong> untuk hubungan logis (obwohl, trotzdem, während, bevor, nachdem, damit).</li>
+                    <li><strong>Kalimat Infinitif</strong> dengan "zu".</li>
+                    <li><strong>Kata Kerja dengan Preposisi</strong>.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata:</h4>
+                <ul>
+                    <li>Kosakata yang lebih luas dan lebih bervariasi.</li>
+                    <li>Bidang kata untuk topik yang lebih abstrak.</li>
+                    <li>Synonyme dan Antonyme.</li>
+                    <li>Idiom dan kolokasi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>Lexikon B1 - Vertiefungswortschatz</h4></th>
+                </tr>
+                <tr>
+                    <th>Thema / Kategorie</th>
+                    <th>Beispiele</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Thema / Kategorie">Reisen und Tourismus</td>
+                    <td data-label="Beispiele">der Flug, die Bahn, das Hotel, buchen, die Sehenswürdigkeit</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Arbeitswelt und Beruf</td>
+                    <td data-label="Beispiele">die Bewerbung, das Vorstellungsgespräch, der Kollege, die Gehalt</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Bildung und Weiterbildung</td>
+                    <td data-label="Beispiele">die Universität, das Studium, der Kurs, lernen, forschen</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Medien und Nachrichten</td>
+                    <td data-label="Beispiele">die Zeitung, das Radio, der Film, die Nachricht, berichten</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Gesellschaft und Politik</td>
+                    <td data-label="Beispiele">die Regierung, die Wahl, der Bürger, diskutieren, abstimmen</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Probleme und Lösungen</td>
+                    <td data-label="Beispiele">das Problem, die Lösung, vorschlagen, lösen, beschreiben</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Tingkat B2 (Penggunaan Bahasa Mandiri - Lanjutan)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 8.5-10 Unit Pelajaran (382.5-450 menit) = Total 204-240 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Memahami isi utama teks kompleks tentang topik konkret dan abstrak; juga memahami diskusi teknis di bidang keahlian sendiri.</li>
+                    <li>Berkomunikasi secara spontan dan lancar sehingga percakapan normal dengan penutur asli dimungkinkan tanpa banyak usaha dari kedua belah pihak.</li>
+                    <li>Menulis teks yang jelas dan rinci tentang berbagai topik.</li>
+                    <li>Menjelaskan sudut pandang tentang masalah terkini dan memberikan keuntungan dan kerugian dari berbagai pilihan.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Isu-isu sosial dan politik terkini.</li>
+                    <li>Sains dan teknologi.</li>
+                    <li>Lingkungan dan keberlanjutan.</li>
+                    <li>Ekonomi dan dunia kerja.</li>
+                    <li>Komunikasi antarbudaya dan prasangka.</li>
+                    <li>Seni dan budaya (lebih mendalam).</li>
+                    <li>Melakukan diskusi, bertukar argumen, membenarkan pendapat sendiri.</li>
+                    <li>Melakukan presentasi.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa:</h4>
+                <ul>
+                    <li><strong>Menggunakan semua struktur tata bahasa</strong> dengan aman dan fleksibel.</li>
+                    <li><strong>Konjunktiv I</strong> (kalimat tidak langsung).</li>
+                    <li><strong>Kalimat Pasif</strong> (semua bentuk waktu dan bentuk, termasuk pasif dengan kata kerja modal).</li>
+                    <li><strong>Nominalisasi</strong> kata kerja dan kata sifat.</li>
+                    <li><strong>Kalimat Partisipial</strong>.</li>
+                    <li><strong>Anak Kalimat</strong> (kondisional, konsesif, final, kausal, temporal, dll.) dengan konjungtor yang lebih kompleks.</li>
+                    <li><strong>Struktur Kalimat: Inversi, Struktur Klammer (Penjepit)</strong>.</li>
+                    <li><strong>Deklinasi Kata Sifat</strong> (mendalam).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata:</h4>
+                <ul>
+                    <li>Kosakata yang sangat luas dan bervariasi, termasuk ungkapan idiomatik dan frasa sehari-hari.</li>
+                    <li>Kosakata teknis di bidang yang relevan.</li>
+                    <li>Pembentukan kata (prefiks, sufiks).</li>
+                    <li>Menangani teks dan diskusi yang lebih kompleks.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>Lexikon B2 - Fachwortschatz und Redewendungen</h4></th>
+                </tr>
+                <tr>
+                    <th>Thema / Kategorie</th>
+                    <th>Beispiele</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Thema / Kategorie">Aktuelle soziale und politische Themen</td>
+                    <td data-label="Beispiele">die Globalisierung, die Integration, die Migration, der Klimawandel</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Wissenschaft und Technologie</td>
+                    <td data-label="Beispiele">die Forschung, die Entwicklung, die Innovation, die Digitalisierung</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Umwelt und Nachhaltigkeit</td>
+                    <td data-label="Beispiele">der Umweltschutz, die erneuerbaren Energien, der Naturschutz</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Wirtschaft und Arbeitswelt</td>
+                    <td data-label="Beispiele">der Markt, die Investition, das Unternehmen, die Arbeitslosigkeit</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Interkulturelle Kommunikation</td>
+                    <td data-label="Beispiele">die Stereotype, das Vorurteil, die kulturelle Vielfalt, Missverständnisse</td>
+                </tr>
+                <tr>
+                    <td data-label="Thema / Kategorie">Argumentation und Präsentation</td>
+                    <td data-label="Beispiele">argumentieren, begründen, widerlegen, die Präsentation halten</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Metodologi dan Didaktik (untuk Semua Tingkat)</h2>
+        <ul>
+            <li><strong>Pendekatan Komunikatif:</strong> Fokus pada situasi berbicara yang nyata.</li>
+            <li><strong>Pembelajaran Berorientasi Tindakan:</strong> Kalian akan aktif berinteraksi dan berkreasi.</li>
+            <li><strong>Diferensiasi Internal:</strong> Mempertimbangkan gaya dan kecepatan belajar yang berbeda dari setiap siswa.</li>
+            <li><strong>Budaya Kesalahan:</strong> Kesalahan adalah bagian dari proses belajar, jangan takut salah!</li>
+            <li><strong>Materi Otentik:</strong> Gunakan teks, video, materi audio asli dari kehidupan sehari-hari di Jerman.</li>
+            <li><strong>Penggunaan Media:</strong> Manfaatkan alat digital dan sumber daya online untuk belajar yang lebih interaktif.</li>
+            <li><strong>Evaluasi Kemajuan Belajar Reguler:</strong> Tes singkat, tugas, dan umpan balik rutin untuk memantau kemajuan kalian.</li>
+        </ul>
+
+        ---
+
+        <h2>Materi yang Direkomendasikan</h2>
+        <ul>
+            <li>Buku pelajaran yang sesuai dengan CEFR (misalnya, Schritte, Menschen, Sicher!, studio d, Aspekte neu).</li>
+            <li>Latihan tata bahasa dan kosakata tambahan.</li>
+            <li>Bacaan (disesuaikan dengan tingkat).</li>
+            <li>Sumber daya online, aplikasi, podcast, berita Jerman.</li>
+            <li>Materi otentik (majalah, brosur, film).</li>
+        </ul>
+
+        <div class="note">
+            <p><strong>Catatan Penting mengenai Durasi Kursus Cepat:</strong></p>
+            <ul>
+                <li>Untuk mencapai target 3 bulan per level dengan 2x pertemuan seminggu, setiap sesi pertemuan akan menjadi **sangat intensif** (sekitar 2.5 hingga 10 Unit Pelajaran per sesi). Ini memerlukan komitmen tinggi dari kalian sebagai pelajar dan instruktur kami.</li>
+                <li>**Belajar Mandiri Ekstensif:** Keberhasilan sangat bergantung pada dedikasi kalian untuk belajar mandiri dan mengulang materi di luar jam pelajaran. Ini adalah komponen kunci dari kurikulum yang dipercepat ini.</li>
+                <li>**Kualitas vs. Kecepatan:** Meskipun durasi dipercepat, fokus kami tetap pada pemahaman dan penguasaan materi yang maksimal. Penyesuaian materi atau penyampaian mungkin diperlukan untuk memastikan kualitas pembelajaran tetap terjaga.</li>
+            </ul>
+        </div>
+
+        ---
+
+        <table class="price-table">
+            <caption>Rincian Harga Kursus Bahasa Jerman Per Tingkat</caption>
+            <thead>
+                <tr>
+                    <th>Tingkat</th>
+                    <th>Privat (1 Siswa)</th>
+                    <th>Kelas Kecil (2-5 Siswa)</th>
+                    <th>Kelas Reguler (6-10 Siswa)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Tingkat">A0</td>
+                    <td data-label="Privat (1 Siswa)">Rp 5.500.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 3.500.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 2.500.000 / siswa</td>
+                </tr>
+                <tr>
+                    <td data-label="Tingkat">A1</td>
+                    <td data-label="Privat (1 Siswa)">Rp 6.000.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 3.800.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 2.800.000 / siswa</td>
+                </tr>
+                <tr>
+                    <td data-label="Tingkat">A2</td>
+                    <td data-label="Privat (1 Siswa)">Rp 6.500.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 4.200.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 3.200.000 / siswa</td>
+                </tr>
+                <tr>
+                    <td data-label="Tingkat">B1</td>
+                    <td data-label="Privat (1 Siswa)">Rp 7.000.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 4.500.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 3.500.000 / siswa</td>
+                </tr>
+                <tr>
+                    <td data-label="Tingkat">B2</td>
+                    <td data-label="Privat (1 Siswa)">Rp 7.500.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 4.800.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 3.800.000 / siswa</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <p><strong>Penting:</strong></p>
+            <ul>
+                <li>Harga di atas adalah untuk **per tingkat (3 bulan)**.</li>
+                <li>Harga belum termasuk biaya materi pelajaran (buku, lisensi digital).</li>
+                <li>Diskon khusus mungkin tersedia untuk pendaftaran lebih dari satu tingkat atau pendaftaran berkelompok. Silakan hubungi kami untuk informasi lebih lanjut.</li>
+            </ul>
+        </div>
+
+        <footer>
+	    <div class="contact-info-footer">
+                <a href="mailto:deltaglobalcon@gmail.com">
+                    <span class="icon-small"><i class="fas fa-envelope"></i></span> deltaglobalcon@gmail.com
+                </a>
+                <a href="https://t.me/DeltaGlobalConnection" target="_blank">
+                    <span class="icon-small"><i class="fab fa-telegram-plane"></i></span> Telegram
+                </a>
+                <a href="https://chat.whatsapp.com/invitation_link_here" target="_blank">
+                    <span class="icon-small"><i class="fab fa-whatsapp"></i></span> WhatsApp
+                </a>
+            </div>
+            <a href="home.html" class="back-to-home">Kembali ke Beranda</a>
+            <p>&copy; 2025 Delta Global Connection. Semua hak dilindungi undang-undang.</p>
+        </footer>
+    </div>
+</body>
+</html>

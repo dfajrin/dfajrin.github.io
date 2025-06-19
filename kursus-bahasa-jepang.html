@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurikulum & Harga Kursus Bahasa Jepang - Delta Global Connection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Warna Bendera Jepang: Putih, Merah */
+            --white: #FFFFFF;
+            --red: #BC002D; /* Merah bendera Jepang */
+            --gold-accent: #FFD700; /* Aksen emas tipis */
+
+            --primary-color: var(--red);
+            --secondary-color: #333333; /* Warna teks utama gelap */
+            --accent-color: var(--gold-accent);
+            --text-dark: #333333;
+            --text-light: #f8f8f8;
+            --bg-gradient-start: #fdfdfd; /* Hampir putih */
+            --bg-gradient-end: #ededed;   /* Abu-abu terang */
+            --card-bg: var(--white);
+            --border-radius: 12px;
+            --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        header p strong {
+            color: var(--accent-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 12px;
+            margin-top: 45px;
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 30px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: '🌸 '; /* Simbol bunga sakura untuk Jepang */
+            margin-left: 20px;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        ol li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--primary-color); /* Menggunakan warna merah untuk penekanan */
+        }
+
+        .level-duration {
+            background-color: var(--gold-accent); /* Emas sebagai latar belakang durasi */
+            color: var(--secondary-color); /* Teks gelap di atas emas */
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-top: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .note {
+            background-color: #fcfcfc; /* Lebih terang dari abu-abu */
+            border-left: 6px solid var(--primary-color); /* Garis merah */
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: var(--border-radius);
+            font-size: 0.95em;
+            color: var(--text-dark);
+        }
+        .note strong {
+            color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+	/* --- New styles for footer contacts and back button --- */
+        .contact-info-footer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #cccccc; /* Garis putus-putus */
+        }
+
+        .contact-info-footer a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color); /* Warna link kontak */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-info-footer a:hover {
+            color: var(--secondary-color); /* Warna hover untuk kontak */
+            transform: translateY(-2px);
+        }
+
+        .contact-info-footer .icon-small {
+            font-size: 1.4em;
+            color: var(--accent-color); /* Warna ikon kontak */
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: var(--primary-color); /* Warna tombol kembali */
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-home:hover {
+            background-color: var(--secondary-color); /* Warna hover tombol kembali */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* --- Two-Column Layout (Screen) --- */
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1fr; /* Default: 1 column on small screens */
+            gap: 20px; /* Spasi antar kolom */
+            margin-top: 20px;
+        }
+
+        .two-column-section h4 {
+            grid-column: 1 / -1; /* Header spans all columns by default */
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .two-column-section > div {
+            padding-right: 10px; /* Sedikit padding agar konten tidak menempel ke batas kolom */
+        }
+
+        @media (min-width: 768px) { /* Untuk layar yang lebih besar, jadikan 2 kolom */
+            .two-column-section {
+                grid-template-columns: 1fr 1fr; /* 2 kolom sama lebar */
+            }
+            .two-column-section.split-header h4 {
+                grid-column: span 1; /* Biarkan header berada di kolom pertamanya */
+            }
+        }
+
+        /* Styling untuk sub-bagian di dalam kolom */
+        .column-content ul, .column-content ol {
+            margin-left: 0;
+            padding-left: 20px; /* Indentasi untuk list di dalam kolom */
+        }
+        .column-content strong {
+            color: var(--primary-color);
+        }
+
+        /* --- Lexikon Table --- */
+        .lexikon-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+            border-radius: var(--border-radius);
+            overflow: hidden; /* For rounded corners on table */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lexikon-table th, .lexikon-table td {
+            border: 1px solid #e0e0e0;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .lexikon-table th {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .lexikon-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .lexikon-table tr:hover {
+            background-color: #f0f0f0;
+        }
+        .lexikon-table h4 {
+            color: var(--secondary-color); /* Hitam untuk judul tabel */
+            margin-top: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* --- Price Table --- */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .price-table caption {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: left;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .price-table th, .price-table td {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .price-table th {
+            background-color: var(--secondary-color); /* Hitam */
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .price-table thead th:first-child {
+            background-color: var(--primary-color); /* Merah untuk "Tingkat" */
+            color: var(--text-light);
+        }
+
+        .price-table tbody tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .price-table td strong {
+            color: var(--secondary-color); /* Hitam untuk harga */
+            font-size: 1.1em;
+        }
+
+        /* Responsive adjustments for tables */
+        @media (max-width: 600px) {
+            .price-table, .lexikon-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto; /* Enable horizontal scrolling */
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            }
+            .price-table thead, .lexikon-table thead {
+                display: none; /* Hide header on small screens for vertical layout */
+            }
+            .price-table tbody tr, .lexikon-table tbody tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #e0e0e0;
+                border-radius: var(--border-radius);
+                padding: 10px;
+            }
+            .price-table td, .lexikon-table td {
+                display: block;
+                text-align: right;
+                border: none;
+                padding: 8px 15px;
+                position: relative;
+            }
+            .price-table td::before, .lexikon-table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: var(--primary-color);
+                margin-right: 10px;
+            }
+            .price-table td:last-child, .lexikon-table td:last-child {
+                border-bottom: 0;
+            }
+        }
+
+
+        /* --- Print Specific Styles --- */
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 1cm;
+                max-width: 100%;
+                border-radius: 0;
+                transform: none;
+            }
+
+            header {
+                border-bottom-color: #000000;
+            }
+
+            header h1, header p, h2, h3, h4 {
+                color: #000000 !important;
+            }
+
+            .level-duration {
+                background-color: #f0f0f0 !important;
+                color: #333333 !important;
+                box-shadow: none;
+            }
+
+            .note {
+                background-color: #f0f8ff !important;
+                border-left-color: #888888 !important;
+            }
+            .note strong {
+                color: #333333 !important;
+            }
+
+            .two-column-section {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                page-break-inside: avoid;
+            }
+
+            .two-column-section > div {
+                padding-right: 0;
+                box-sizing: border-box;
+            }
+
+            ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            ul li {
+                padding-left: 0;
+            }
+
+            h2, h3, h4, .level-duration, .lexikon-table, .price-table {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            .lexikon-table th, .price-table th {
+                background-color: #e0e0e0 !important;
+                color: #333333 !important;
+            }
+            .price-table thead th:first-child {
+                background-color: #d0d0d0 !important;
+            }
+            .lexikon-table td, .price-table td {
+                color: #000000 !important;
+            }
+
+	    .contact-info-footer, .back-to-home {
+                display: none; /* Sembunyikan di versi cetak */
+            }
+        }
+
+        /* Responsive adjustments (continued from previous version) */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px 15px;
+                padding: 25px 30px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            h4 {
+                font-size: 1.1em;
+            }
+	    .contact-info-footer {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+            .level-duration {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kurikulum Bahasa Jepang</h1>
+            <p>Disusun oleh <strong>Delta Global Connection</strong></p>
+            <p>"Connecting you to the world"</p>
+        </header>
+
+        <p>Kurikulum ini menyediakan gambaran komprehensif tentang isi dan tujuan pembelajaran untuk kursus Bahasa Jepang dari **N5 hingga N3**, yang disesuaikan dengan standar **Japanese Language Proficiency Test (JLPT)**. Kurikulum ini modular dan dirancang agar setiap level dapat diselesaikan dalam <strong>3 bulan</strong> dengan <strong>2 kali pertemuan per minggu</strong>.</p>
+
+        <h2>Tujuan Pembelajaran Umum untuk Semua Tingkat</h2>
+        <ul>
+            <li><strong>Kompetensi Komunikatif:</strong> Kalian akan mampu berkomunikasi lisan dan tulisan dalam berbagai situasi sehari-hari dan konteks yang relevan.</li>
+            <li><strong>Kompetensi Antarbudaya:</strong> Dapatkan wawasan mendalam tentang budaya, etiket, dan kehidupan sehari-hari di Jepang.</li>
+            <li><strong>Kompetensi Strategis:</strong> Kembangkan strategi belajar yang efektif dan kemampuan untuk belajar mandiri, termasuk penggunaan kamus dan sumber daya Jepang.</li>
+            <li><strong>Ketepatan Bahasa:</strong> Kuasai struktur tata bahasa penting dan perbanyak kosakata (termasuk Kanji, Hiragana, Katakana).</li>
+        </ul>
+
+        ---
+
+        <h2>Tingkat N5 (Dasar)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 2.5 Unit Pelajaran (112.5 menit) = Total 60 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Mampu membaca dan memahami frasa serta kalimat khas yang ditulis dalam Hiragana, Katakana, dan Kanji dasar.</li>
+                    <li>Mampu mendengarkan dan memahami percakapan pendek yang disampaikan dengan kecepatan lambat tentang topik sehari-hari.</li>
+                    <li>Mampu melakukan percakapan dasar seperti memperkenalkan diri, menanyakan arah, dan berbelanja.</li>
+                    <li>Mengenali sekitar 100 Kanji.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Perkenalan diri, salam, keluarga.</li>
+                    <li>Belanja, memesan makanan, menanyakan harga.</li>
+                    <li>Waktu, tanggal, hari, bulan, tahun.</li>
+                    <li>Hobi dan kegiatan sehari-hari.</li>
+                    <li>Arah dan lokasi.</li>
+                    <li>Transportasi sederhana.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa (文法 - Bunpou):</h4>
+                <ul>
+                    <li><strong>Partikel:</strong> は (wa), が (ga), を (o), に (ni), へ (e), で (de), と (to), も (mo), から (kara), まで (made), の (no).</li>
+                    <li><strong>Kata Kerja:</strong> Bentuk ます (masu), bentuk て (te), bentuk ない (nai), bentuk kamus, bentuk たい (tai), kata kerja intransitif/transitif dasar.</li>
+                    <li><strong>Kata Sifat:</strong> い-keiyoushi (い形容詞) dan な-keiyoushi (な形容詞).</li>
+                    <li><strong>Pola Kalimat Dasar:</strong> X は Y です, X は Y ではありません, X があります/います.</li>
+                    <li><strong>Angka, Penghitung:</strong> 基本的な数字と助数詞 (kazu to josūshi).</li>
+                    <li><strong>Pertanyaan:</strong> 〜か (ka), 誰 (dare), 何 (nani), どこ (doko), いつ (itsu), いくつ (ikutsu).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata (語彙 - Goi) & Huruf (文字 - Moji):</h4>
+                <ul>
+                    <li><strong>Hiragana dan Katakana:</strong> Menguasai sepenuhnya.</li>
+                    <li><strong>Kanji:</strong> Sekitar 100 Kanji dasar (misal: 日、本、人、大、学、語、食、行、来、見).</li>
+                    <li>Kosakata dasar untuk perkenalan, makanan, keluarga, tempat, angka, warna.</li>
+                    <li>Frasa umum sehari-hari.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>日本語語彙 N5 - 基本語彙</h4></th>
+                </tr>
+                <tr>
+                    <th>テーマ / カテゴリー</th>
+                    <th>例 (例: 日本語 / Romaji)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">挨拶 (あいさつ)</td>
+                    <td data-label="例">おはようございます / Ohayou gozaimasu, こんにちは / Konnichiwa, こんばんは / Konbanwa, さようなら / Sayounara</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">自己紹介 (じこしょうかい)</td>
+                    <td data-label="例">はじめまして / Hajimemashite, 私 (わたし)は〜です / Watashi wa ~ desu, よろしくお願いします / Yoroshiku onegaishimasu</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">場所 (ばしょ) と 方向 (ほうこう)</td>
+                    <td data-label="例">ここ / koko, そこ / soko, あそこ / asoko, 右 (みぎ) / migi, 左 (ひだり) / hidari, 上 (うえ) / ue, 下 (した) / shita</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">食べ物 (たべもの) と 飲み物 (のみもの)</td>
+                    <td data-label="例">ご飯 (ごはん) / gohan, 水 (みず) / mizu, お茶 (おちゃ) / ocha, 食べる (たべる) / taberu, 飲む (のむ) / nomu</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">家族 (かぞく)</td>
+                    <td data-label="例">お父さん (おとうさん) / otousan, お母さん (おかあさん) / okaasan, 兄 (あに) / ani, 妹 (いもうと) / imouto</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Tingkat N4 (Dasar - Menengah)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 3.5-4 Unit Pelajaran (157.5-180 menit) = Total 84-96 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Mampu membaca dan memahami teks tentang topik sehari-hari yang akrab yang ditulis dengan kosakata dasar dan Kanji.</li>
+                    <li>Mampu mendengarkan dan memahami percakapan yang lebih panjang tentang topik sehari-hari dengan kecepatan yang lebih alami.</li>
+                    <li>Mampu menyampaikan ide-ide dasar dan pengalaman pribadi.</li>
+                    <li>Mengenali sekitar 300 Kanji.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Mendeskripsikan orang dan benda secara lebih rinci.</li>
+                    <li>Menyatakan keinginan, kemampuan, izin, larangan, kewajiban.</li>
+                    <li>Memberi dan menerima barang atau bantuan.</li>
+                    <li>Perjalanan, pemesanan, insiden.</li>
+                    <li>Membahas cuaca dan musim.</li>
+                    <li>Rumah dan perabot.</li>
+                    <li>Memberikan alasan dan penjelasan sederhana.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa (文法 - Bunpou):</h4>
+                <ul>
+                    <li><strong>Bentuk Kata Kerja:</strong> Bentuk kamus (辞書形 - jishokei), bentuk pendek (普通形 - futsūkei), bentuk volisional (意向形 - ikōkei), bentuk pasif (受身形 - ukemikei), bentuk kausatif (使役形 - shiekikei) dasar.</li>
+                    <li><strong>Partikel Lanjutan:</strong> に (ni) untuk tujuan, から (kara) untuk alasan, のに (noni), ために (tame ni), とき (toki).</li>
+                    <li><strong>Pola Kalimat:</strong> 〜ませんか (masenka), 〜ほうがいい (hou ga ii), 〜ましょう (mashou), 〜つもり (tsumori), 〜はず (hazu), 〜やすい/にくい (yasui/nikui).</li>
+                    <li><strong>Perbandingan:</strong> より (yori), ほど (hodo), 〜の中で一番 (no naka de ichiban).</li>
+                    <li><strong>Kausatif/Pasif:</strong> 使役受身形 (shieki ukemikei) dasar.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata (語彙 - Goi) & Huruf (文字 - Moji):</h4>
+                <ul>
+                    <li><strong>Kanji:</strong> Sekitar 300 Kanji (termasuk N5).</li>
+                    <li>Kosakata untuk deskripsi sifat, perasaan, kegiatan sehari-hari yang lebih kompleks.</li>
+                    <li>Kata kerja dan kata sifat yang lebih beragam.</li>
+                    <li>Onomatopoeia dasar.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>日本語語彙 N4 - 日常生活語彙</h4></th>
+                </tr>
+                <tr>
+                    <th>テーマ / カテゴリー</th>
+                    <th>例 (例: 日本語 / Romaji)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">感情 (かんじょう) と 意見 (いけん)</td>
+                    <td data-label="例">嬉しい (うれしい) / ureshii, 悲しい (かなしい) / kanashii, 面白い (おもしろい) / omoshiroi, と思います (to omoimasu)</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">能力 (のうりょく) と 許可 (きょか)</td>
+                    <td data-label="例">〜ことができます / ~koto ga dekimasu, 〜てもいいです / ~te mo ii desu, 〜てはいけません / ~te wa ikemasen</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">交通 (こうつう) と 移動 (いどう)</td>
+                    <td data-label="例">駅 (えき) / eki, バス停 (ばすてい) / basutei, 電車 (でんしゃ) / densha, 歩く (あるく) / aruku, 乗る (のる) / noru</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">形容詞 (けいようし) と 副詞 (ふくし)</td>
+                    <td data-label="例">高い (たかい) / takai, 低い (ひくい) / hikui, 速い (はやい) / hayai, ゆっくり / yukkuri, とても / totemo</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">依頼 (いらい) と 提案 (ていあん)</td>
+                    <td data-label="例">〜てください / ~te kudasai, 〜ませんか / ~masenka, 〜ましょう / ~mashou, お願いします (おねがいします) / onegaishimasu</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Tingkat N3 (Menengah)</h2>
+        <div class="level-duration">
+            <strong>Target Durasi: 3 Bulan (12 Minggu)</strong><br>
+            2x Pertemuan/Minggu @ 5-6 Unit Pelajaran (225-270 menit) = Total 120-144 Unit Pelajaran
+        </div>
+
+        <div class="two-column-section">
+            <div class="column-content">
+                <h4>Tujuan Pembelajaran:</h4>
+                <ul>
+                    <li>Mampu membaca dan memahami teks yang sedikit lebih sulit dengan konten spesifik tentang topik sehari-hari.</li>
+                    <li>Mampu mendengarkan dan memahami percakapan yang hampir mendekati kecepatan alami tentang topik yang beragam, memahami inti cerita, hubungan antar individu, dan poin-poin utama.</li>
+                    <li>Mampu menyampaikan pendapat secara lebih rinci, menjelaskan alasan, dan berpartisipasi dalam diskusi dasar.</li>
+                    <li>Mengenali sekitar 650 Kanji.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Topik dan Situasi:</h4>
+                <ul>
+                    <li>Berbicara tentang pengalaman dan kenangan masa lalu.</li>
+                    <li>Mengungkapkan kemungkinan dan dugaan.</li>
+                    <li>Memberikan saran, perintah, dan larangan secara lebih halus.</li>
+                    <li>Membahas berita dan acara terkini (sederhana).</li>
+                    <li>Budaya Jepang, tradisi, festival.</li>
+                    <li>Masalah sosial dan lingkungan (dasar).</li>
+                    <li>Kesehatan dan gaya hidup.</li>
+                    <li>Pendidikan dan karier.</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Tata Bahasa (文法 - Bunpou):</h4>
+                <ul>
+                    <li><strong>Bentuk Kata Kerja Lanjutan:</strong> Bentuk sukarela (〜よう - you), bentuk potensial (〜れる/られる - reru/rareru), bentuk bersyarat (〜ば - ba, 〜たら - tara, 〜なら - nara, 〜と - to).</li>
+                    <li><strong>Pola Tata Bahasa Umum:</strong> 〜はずだ (hazu da), 〜ようだ (you da), 〜らしい (rashii), 〜そう (sou - "looks like"), 〜てしまう (te shimau), 〜ておく (te oku), 〜ことにする/なる (koto ni suru/naru).</li>
+                    <li><strong>Kalimat Majemuk:</strong> Penggunaan konjungsi yang lebih kompleks (接続詞 - setsuzokushi) seperti しかし (shikashi), それで (sore de), ところが (tokoroga).</li>
+                    <li><strong>Ekspresi Kehormatan (敬語 - Keigo) dasar:</strong> Sonkeigo (尊敬語) dan Kenjougo (謙譲語) sederhana.</li>
+                    <li><strong>Ekspresi Tepat Waktu:</strong> 〜間に (aida ni), 〜うちに (uchi ni), 〜てから (te kara).</li>
+                </ul>
+            </div>
+            <div class="column-content">
+                <h4>Kosakata (語彙 - Goi) & Huruf (文字 - Moji):</h4>
+                <ul>
+                    <li><strong>Kanji:</strong> Sekitar 650 Kanji (termasuk N5 & N4).</li>
+                    <li>Kosakata untuk topik abstrak dan non-rutin.</li>
+                    <li>Kata kerja, kata sifat, dan kata benda yang lebih bervariasi dan kompleks.</li>
+                    <li>Frasa yang lebih natural dan ekspresi idiomatik dasar.</li>
+                    <li>Kosakata untuk media, berita, dan opini.</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="lexikon-table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h4>日本語語彙 N3 - 中級語彙</h4></th>
+                </tr>
+                <tr>
+                    <th>テーマ / カテゴリー</th>
+                    <th>例 (例: 日本語 / Romaji)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">経験 (けいけん) と 思い出 (おもいで)</td>
+                    <td data-label="例">〜ことがあります / ~koto ga arimasu, 〜たばかりです / ~ta bakari desu, 昔 (むかし) / mukashi, 覚えている (おぼえている) / oboeteiru</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">可能性 (かのうせい) と 推量 (すいりょう)</td>
+                    <td data-label="例">〜かもしれません / ~kamoshiremasen, 〜でしょう / ~deshou, 〜らしい / ~rashii, 多分 (たぶん) / tabun</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">文化 (ぶんか) と 伝統 (でんとう)</td>
+                    <td data-label="例">お祭り (おまつり) / omatsuri, 神社 (じんじゃ) / jinja, お寺 (おてら) / otera, 伝統的 (でんとうてき) / dentouteki</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">社会 (しゃかい) と 環境 (かんきょう)</td>
+                    <td data-label="例">問題 (もんだい) / mondai, 環境保護 (かんきょうほご) / kankyouhogo, ボランティア / borantia, 貧困 (ひんこん) / hinkon</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">健康 (けんこう) と ライフスタイル</td>
+                    <td data-label="例">運動する (うんどうする) / undousuru, 健康的 (けんこうてき) / kenkouteki, 睡眠 (すいみん) / suimin, ストレス / sutoresu</td>
+                </tr>
+                <tr>
+                    <td data-label="テーマ / カテゴリー">意見 (いけん) と 討論 (とうろん)</td>
+                    <td data-label="例">〜と思います / ~to omoimasu, 〜に対して (ni taishite), 賛成 (さんせい) / sansei, 反対 (はんたい) / hantai, 理由 (りゆう) / riyuu</td>
+                </tr>
+            </tbody>
+        </table>
+
+        ---
+
+        <h2>Metodologi dan Didaktik (untuk Semua Tingkat)</h2>
+        <ul>
+            <li><strong>Pendekatan Komunikatif:</strong> Fokus pada situasi berbicara yang nyata dan interaksi autentik.</li>
+            <li><strong>Pembelajaran Berorientasi Tindakan:</strong> Kalian akan aktif berinteraksi, melakukan role-play, dan berkreasi dalam bahasa Jepang.</li>
+            <li><strong>Penguasaan Hiragana & Katakana:</strong> Pondasi kuat sebelum masuk ke Kanji.</li>
+            <li><strong>Pengenalan Kanji Bertahap:</strong> Pembelajaran Kanji terintegrasi dan berkelanjutan sesuai level JLPT.</li>
+            <li><strong>Budaya Kesalahan:</strong> Kesalahan adalah bagian alami dari proses belajar, jangan takut salah!</li>
+            <li><strong>Materi Otentik:</strong> Gunakan teks, video, materi audio, dan manga/anime sederhana asli dari Jepang.</li>
+            <li><strong>Penggunaan Media:</strong> Manfaatkan alat digital, aplikasi, podcast, dan platform belajar online untuk interaksi yang lebih mendalam.</li>
+            <li><strong>Evaluasi Kemajuan Belajar Reguler:</strong> Tes singkat, kuis, tugas, dan umpan balik rutin untuk memantau pemahaman dan penguasaan materi.</li>
+        </ul>
+
+        ---
+
+        <h2>Materi yang Direkomendasikan</h2>
+        <ul>
+            <li>Buku pelajaran sesuai JLPT (misalnya, Minna no Nihongo, Genki, Quartet).</li>
+            <li>Latihan tata bahasa, kosakata, dan Kanji tambahan.</li>
+            <li>Bacaan (disesuaikan dengan tingkat, seperti cerita pendek atau berita sederhana).</li>
+            <li>Sumber daya online, aplikasi kamus (misal: Jisho.org), podcast, channel YouTube pembelajaran bahasa Jepang.</li>
+            <li>Materi otentik (majalah, blog, film, anime, drama).</li>
+            <li>Kartu flash (Anki, Quizlet) untuk menghafal kosakata dan Kanji.</li>
+        </ul>
+
+        <div class="note">
+            <p><strong>Catatan Penting mengenai Durasi Kursus Cepat:</strong></p>
+            <ul>
+                <li>Untuk mencapai target 3 bulan per level dengan 2x pertemuan seminggu, setiap sesi pertemuan akan menjadi **sangat intensif**. Ini memerlukan komitmen tinggi dari kalian sebagai pelajar dan instruktur kami.</li>
+                <li>**Belajar Mandiri Ekstensif:** Keberhasilan sangat bergantung pada dedikasi kalian untuk belajar mandiri dan mengulang materi di luar jam pelajaran. Penguasaan Kanji dan kosakata memerlukan disiplin tinggi.</li>
+                <li>**Kualitas vs. Kecepatan:** Meskipun durasi dipercepat, fokus kami tetap pada pemahaman dan penguasaan materi yang maksimal. Penyesuaian materi atau penyampaian mungkin diperlukan untuk memastikan kualitas pembelajaran tetap terjaga.</li>
+            </ul>
+        </div>
+
+        ---
+
+        <table class="price-table">
+            <caption>Rincian Harga Kursus Bahasa Jepang Per Tingkat</caption>
+            <thead>
+                <tr>
+                    <th>Tingkat JLPT</th>
+                    <th>Privat (1 Siswa)</th>
+                    <th>Kelas Kecil (2-5 Siswa)</th>
+                    <th>Kelas Reguler (6-10 Siswa)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Tingkat JLPT">N5</td>
+                    <td data-label="Privat (1 Siswa)">Rp 5.800.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 3.700.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 2.700.000 / siswa</td>
+                </tr>
+                <tr>
+                    <td data-label="Tingkat JLPT">N4</td>
+                    <td data-label="Privat (1 Siswa)">Rp 6.300.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 4.000.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 3.000.000 / siswa</td>
+                </tr>
+                <tr>
+                    <td data-label="Tingkat JLPT">N3</td>
+                    <td data-label="Privat (1 Siswa)">Rp 6.800.000</td>
+                    <td data-label="Kelas Kecil (2-5 Siswa)">Rp 4.300.000 / siswa</td>
+                    <td data-label="Kelas Reguler (6-10 Siswa)">Rp 3.300.000 / siswa</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <p><strong>Penting:</strong></p>
+            <ul>
+                <li>Harga di atas adalah untuk **per tingkat (3 bulan)**.</li>
+                <li>Harga belum termasuk biaya materi pelajaran (buku, lisensi digital).</li>
+                <li>Diskon khusus mungkin tersedia untuk pendaftaran lebih dari satu tingkat atau pendaftaran berkelompok. Silakan hubungi kami untuk informasi lebih lanjut.</li>
+            </ul>
+        </div>
+
+        <footer>
+	    <div class="contact-info-footer">
+                <a href="mailto:deltaglobalcon@gmail.com">
+                    <span class="icon-small"><i class="fas fa-envelope"></i></span> deltaglobalcon@gmail.com
+                </a>
+                <a href="https://t.me/DeltaGlobalConnection" target="_blank">
+                    <span class="icon-small"><i class="fab fa-telegram-plane"></i></span> Telegram
+                </a>
+                <a href="https://chat.whatsapp.com/invitation_link_here" target="_blank">
+                    <span class="icon-small"><i class="fab fa-whatsapp"></i></span> WhatsApp
+                </a>
+            </div>
+            <a href="home.html" class="back-to-home">Kembali ke Beranda</a>
+            <p>&copy; 2025 Delta Global Connection. Semua hak dilindungi undang-undang.</p>
+        </footer>
+    </div>
+</body>
+</html>
