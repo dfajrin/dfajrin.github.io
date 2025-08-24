@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPQ Nurul Hikmah - Taman Pendidikan Al-Qur'an</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a936f;
+            --secondary-color: #88d498;
+            --accent-color: #f3e9d2;
+            --dark-color: #114b5f;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo-text span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .mySlides {
+            display: none;
+            height: 100%;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-content {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            max-width: 600px;
+        }
+        
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .slide-content p {
+            font-size: 1.2rem;
+        }
+        
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Programs Section */
+        .programs {
+            background-color: var(--light-color);
+        }
+        
+        .program-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .program-card-content {
+            padding: 1.5rem;
+        }
+        
+        .program-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Registration Section */
+        .registration {
+            background: linear-gradient(rgba(26, 147, 111, 0.9), rgba(26, 147, 111, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23114b5f" width="50" height="50"/><rect fill="%23114b5f" x="50" y="50" width="50" height="50"/></svg>');
+            background-size: cover;
+            color: white;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--dark-color);
+        }
+        
+        /* Donation Section */
+        .donation-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .donation-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            width: 300px;
+        }
+        
+        .donation-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .donation-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .donation-card p {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .slide-content {
+                left: 20px;
+                bottom: 20px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slideshow-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .slide-content {
+                text-align: center;
+                left: 0;
+                right: 0;
+                padding: 0 20px;
+            }
+            
+            .slideshow-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-color); margin-right: 10px;"></i>
+                <div class="logo-text">TPQ <span>Nurul Hikmah</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#programs">Program</a></li>
+                    <li><a href="#registration">Pendaftaran</a></li>
+                    <li><a href="#donation">Donasi</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect fill='%231a936f' width='800' height='500'/><circle fill='%23f3e9d2' cx='400' cy='250' r='100'/><text x='400' y='260' font-family='Arial' font-size='40' text-anchor='middle' fill='%23114b5f'>Kegiatan Mengajar</text></svg>" alt="Kegiatan Mengajar">
+            <div class="slide-content">
+                <h2>Membangun Generasi Qur'ani</h2>
+                <p>Mendidik anak-anak dengan kasih sayang dan ilmu Al-Qur'an sejak dini</p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect fill='%2388d498' width='800' height='500'/><rect fill='%23f3e9d2' x='200' y='150' width='400' height='200' rx='10'/><text x='400' y='260' font-family='Arial' font-size='40' text-anchor='middle' fill='%23114b5f'>Kelas Interaktif</text></svg>" alt="Kelas Interaktif">
+            <div class="slide-content">
+                <h2>Belajar dengan Menyenangkan</h2>
+                <p>Metode pembelajaran yang kreatif dan menyenangkan untuk anak-anak</p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect fill='%23114b5f' width='800' height='500'/><polygon fill='%23f3e9d2' points='400,150 500,350 300,350'/><text x='400' y='260' font-family='Arial' font-size='40' text-anchor='middle' fill='%23f3e9d2'>Kegiatan Outdoor</text></svg>" alt="Kegiatan Outdoor">
+            <div class="slide-content">
+                <h2>Pengalaman Belajar Holistik</h2>
+                <p>Kegiatan indoor dan outdoor untuk pengembangan karakter anak</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang TPQ Nurul Hikmah</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>TPQ Nurul Hikmah adalah lembaga pendidikan Al-Qur'an untuk anak usia dini, SD, hingga SMP yang berkomitmen untuk mencetak generasi Qur'ani yang berakhlak mulia, cerdas, dan kreatif.</p>
+                    <p>Kami telah berdiri sejak tahun 2010 dan telah dipercaya oleh ratusan orang tua untuk mendidik putra-putri mereka dalam memahami dan mengamalkan Al-Qur'an dalam kehidupan sehari-hari.</p>
+                    <p>Dengan metode pembelajaran yang menyenangkan dan guru-guru yang berpengalaman, kami menciptakan lingkungan belajar yang nyaman dan kondusif bagi anak-anak untuk mempelajari kitab suci Al-Qur'an.</p>
+                </div>
+                <div class="about-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'><rect fill='%23f3e9d2' width='600' height='400'/><circle fill='%231a936f' cx='150' cy='200' r='80'/><circle fill='%2388d498' cx='450' cy='200' r='80'/><text x='300' y='380' font-family='Arial' font-size='20' text-anchor='middle' fill='%23114b5f'>Gambar TPQ Nurul Hikmah</text></svg>" alt="TPQ Nurul Hikmah">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Program Pendidikan</h2>
+            <div class="program-cards">
+                <div class="program-card">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect fill='%231a936f' width='300' height='200'/><circle fill='%23f3e9d2' cx='150' cy='100' r='50'/><text x='150' y='110' font-family='Arial' font-size='20' text-anchor='middle' fill='%23114b5f'>Usia Dini</text></svg>" alt="Program Usia Dini">
+                    <div class="program-card-content">
+                        <h3>Program Usia Dini (3-6 tahun)</h3>
+                        <p>Pengenalan huruf hijaiyah, hafalan surat pendek, doa sehari-hari, dan pembentukan karakter islami melalui metode bermain dan bernyanyi.</p>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect fill='%2388d498' width='300' height='200'/><rect fill='%23f3e9d2' x='75' y='50' width='150' height='100' rx='10'/><text x='150' y='110' font-family='Arial' font-size='20' text-anchor='middle' fill='%23114b5f'>SD</text></svg>" alt="Program SD">
+                    <div class="program-card-content">
+                        <h3>Program SD (7-12 tahun)</h3>
+                        <p>Belajar membaca Al-Qur'an dengan tajwid yang benar, hafalan juz 30, praktek ibadah sehari-hari, dan pemahaman akidah dasar.</p>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect fill='%23114b5f' width='300' height='200'/><polygon fill='%23f3e9d2' points='150,50 250,175 50,175'/><text x='150' y='140' font-family='Arial' font-size='20' text-anchor='middle' fill='%23f3e9d2'>SMP</text></svg>" alt="Program SMP">
+                    <div class="program-card-content">
+                        <h3>Program SMP (13-15 tahun)</h3>
+                        <p>Pemantapan bacaan Al-Qur'an, tahfidz Qur'an, kajian hadits, pemahaman fiqih ibadah, dan pembinaan akhlak mulia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Formulir Pendaftaran</h2>
+            <div class="form-container">
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap Anak</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Usia</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="parent">Nama Orang Tua/Wali</label>
+                        <input type="text" id="parent" name="parent" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="program">Program yang Dipilih</label>
+                        <select id="program" name="program" required>
+                            <option value="">Pilih Program</option>
+                            <option value="usia-dini">Usia Dini (3-6 tahun)</option>
+                            <option value="sd">SD (7-12 tahun)</option>
+                            <option value="smp">SMP (13-15 tahun)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Pesan (opsional)</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Daftar Sekarang</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation">
+        <div class="container">
+            <h2 class="section-title">Dukung Kami dengan Donasi</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Donasi Anda sangat berarti untuk kelangsungan operasional TPQ Nurul Hikmah. Setiap kontribusi akan digunakan untuk meningkatkan kualitas pendidikan dan fasilitas belajar mengajar.</p>
+            
+            <div class="donation-cards">
+                <div class="donation-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Donasi Tunai</h3>
+                    <p>Donasi dapat disampaikan langsung ke sekretariat TPQ Nurul Hikmah setiap hari Senin sampai Jumat pukul 08.00-16.00 WIB.</p>
+                    <button class="btn">Info Lebih Lanjut</button>
+                </div>
+                
+                <div class="donation-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Transfer Bank</h3>
+                    <p>BCA: 1234567890 (Yayasan Nurul Hikmah)<br>Mandiri: 0987654321 (Yayasan Nurul Hikmah)</p>
+                    <button class="btn">Info Lebih Lanjut</button>
+                </div>
+                
+                <div class="donation-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Donasi Online</h3>
+                    <p>Gunakan platform donasi online untuk kemudahan berdonasi secara digital melalui berbagai metode pembayaran.</p>
+                    <button class="btn">Donasi Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TPQ Nurul Hikmah</h3>
+                    <p>Membangun generasi Qur'ani yang berakhlak mulia, cerdas, dan kreatif.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak Kami</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Pendidikan No. 123, Jakarta Selatan</li>
+                        <li><i class="fas fa-phone"></i> (021) 7654321</li>
+                        <li><i class="fas fa-envelope"></i> info@tpqnurulhikmah.id</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Kami</h3>
+                    <p>Ikuti media sosial kami untuk mendapatkan informasi terbaru</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 TPQ Nurul Hikmah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+        
+        // Form submission
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pendaftaran Anda telah berhasil dikirim. Kami akan menghubungi Anda dalam waktu 1x24 jam.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
