@@ -405,7 +405,7 @@ const translations = {
         skillsTitle: "Skill",
         skillPython: "Python (Data Science, Analisis, Otomatisasi)",
         skillOffice: "MS Office",
-        skillAI: "AI & Pembelajaran Mesin",
+        skillAI: "AI & Machine Learning",
         skillDataAnalysis: "Analisis & Visualisasi Data",
         skillDashboard: "Dashboard & Pelaporan",
         skillAnalytical: "Pemikiran Analitis",
