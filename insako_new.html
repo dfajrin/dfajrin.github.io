@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Insako Jaya Sejahtera | Spesialis Kemasan Karton Custom</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --primary-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+            --secondary-color: #f59e0b;
+            --secondary-gradient: linear-gradient(135deg, #f59e0b, #d97706);
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --bg-alt: #f9fafb;
+            --card-bg: #ffffff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #111827;
+            --footer-text: rgba(255, 255, 255, 0.8);
+            --border-color: #e5e7eb;
+            --overlay-color: rgba(0, 0, 0, 0.6);
+            --input-bg: #ffffff;
+            --input-border: #e5e7eb;
+            --modal-bg: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --filter-btn-bg: #ffffff;
+            --filter-btn-text: #374151;
+            --portfolio-overlay: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(30, 64, 175, 0.85));
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition-slow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-light {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-light:hover {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--overlay-color);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: var(--transition-slow);
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .slide-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 2;
+        }
+
+        .indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-color);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.3;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::before {
+            top: 0;
+            left: 0;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--bg-alt);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .portfolio::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--secondary-gradient);
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            margin: 5px;
+            background: var(--filter-btn-bg);
+            color: var(--filter-btn-text);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 280px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--portfolio-overlay);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-title {
+            color: white;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .portfolio-desc {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .portfolio-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .portfolio-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .portfolio-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .portfolio-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .portfolio-item:hover .portfolio-title,
+        .portfolio-item:hover .portfolio-desc,
+        .portfolio-item:hover .portfolio-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Order Form */
+        .order-form {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .order-form:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            flex: 1;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group.full-width {
+            flex: 0 0 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .required {
+            color: #ef4444;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-submit {
+            background: var(--secondary-gradient);
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn-submit:hover {
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 100px 0;
+            background-color: var(--bg-alt);
+            position: relative;
+        }
+
+        .map-container {
+            height: 450px;
+            margin-bottom: 40px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .map-container:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .address-info {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .address-info:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .address-info p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--primary-gradient);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 2.8rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 80px 0 20px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-gradient);
+            border-radius: 2px;
+        }
+
+        .footer-column p, .footer-column li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .footer-column i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .modal-content {
+            background-color: var(--modal-bg);
+            color: var(--text-color);
+            padding: 50px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-icon {
+            font-size: 5rem;
+            color: #10b981;
+            margin-bottom: 25px;
+        }
+
+        .btn-confirm {
+            margin-top: 30px;
+            padding: 12px 30px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .slide-content h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--header-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                gap: 30px;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .slide-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-form {
+                padding: 30px 20px;
+            }
+            
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+            
+            .theme-toggle {
+                font-size: 1.2rem;
+                margin-left: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>PT. Insako Jaya Sejahtera</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#order">Pesan</a></li>
+                    <li><a href="#lokasi">Lokasi</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <!-- Slide 1: Profile Perusahaan -->
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Spesialis Kemasan Karton Berkualitas</h2>
+                <p>Melayani kebutuhan kemasan custom untuk bisnis di seluruh Indonesia sejak 2010 dengan standar kualitas internasional.</p>
+                <a href="#tentang" class="btn">Selengkapnya</a>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Klien -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Dipercaya oleh Brand Terkemuka</h2>
+                <p>Bekerja sama dengan lebih dari 500 perusahaan dari berbagai industri di Indonesia dan mancanegara.</p>
+                <a href="#portfolio" class="btn">Lihat Portfolio</a>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Produk -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1608506375590-7870ceb751f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Beragam Produk Kemasan</h2>
+                <p>Menghasilkan berbagai jenis kemasan karton dengan desain custom untuk kebutuhan bisnis yang berbeda.</p>
+                <a href="#portfolio" class="btn">Lihat Karya Kami</a>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Gudang -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Fasilitas Produksi Modern</h2>
+                <p>Didukung dengan gudang dan mesin produksi berteknologi terkini untuk memastikan kualitas terbaik.</p>
+                <a href="#lokasi" class="btn">Lihat Fasilitas</a>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Tim -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1573164574230-db1d5e960238?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2>Tim Profesional dan Berpengalaman</h2>
+                <p>Didukung oleh tim yang kompeten dan bersemangat dalam menciptakan solusi kemasan terbaik untuk Anda.</p>
+                <a href="#tentang" class="btn">Kenali Tim Kami</a>
+            </div>
+        </div>
+        
+        <div class="slide-indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+            <div class="indicator" data-index="3"></div>
+            <div class="indicator" data-index="4"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="tentang" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Tentang Perusahaan Kami</h2>
+            </div>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p>PT. Insako Jaya Sejahtera adalah perusahaan spesialis kemasan karton custom yang telah beroperasi sejak 2010. Kami melayani berbagai kebutuhan kemasan untuk industri retail, F&B, elektronik, farmasi, dan banyak sektor lainnya.</p>
+                    <p>Dengan pengalaman lebih dari satu dekade, kami memahami betul kebutuhan pasar Indonesia akan kemasan yang tidak hanya fungsional tetapi juga menarik dan mampu meningkatkan brand image.</p>
+                    <p>Komitmen kami adalah memberikan solusi kemasan terbaik dengan kualitas bahan yang premium, desain yang kreatif, dan ketepatan waktu dalam pengiriman.</p>
+                    <a href="#order" class="btn">Pesan Sekarang</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Proses Produksi Kemasan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Portfolio Kami</h2>
+                <p>Beberapa contoh kemasan karton custom yang telah kami produksi untuk berbagai klien</p>
+            </div>
+            
+            <div class="portfolio-filters fade-in">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="makanan">Kemasan Makanan</button>
+                <button class="filter-btn" data-filter="retail">Kemasan Retail</button>
+                <button class="filter-btn" data-filter="elektronik">Kemasan Elektronik</button>
+                <button class="filter-btn" data-filter="khusus">Kemasan Khusus</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in" data-category="makanan">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kemasan Makanan" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kemasan Makanan Premium</h3>
+                        <p class="portfolio-desc">Kemasan karton custom untuk produk makanan dengan desain elegan dan fungsional.</p>
+                        <a href="#" class="portfolio-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="retail">
+                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kemasan Retail" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kemasan Produk Retail</h3>
+                        <p class="portfolio-desc">Kemasan menarik untuk produk retail dengan branding yang kuat.</p>
+                        <a href="#" class="portfolio-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="elektronik">
+                    <img src="https://images.unsplash.com/photo-1563013546-7e5c52cee24f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kemasan Elektronik" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kemasan Produk Elektronik</h3>
+                        <p class="portfolio-desc">Kemasan pelindung dengan desain modern untuk produk elektronik.</p>
+                        <a href="#" class="portfolio-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="khusus">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kemasan Khusus" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kemasan Hadiah Eksklusif</h3>
+                        <p class="portfolio-desc">Kemasan mewah untuk produk hadiah dengan sentuhan khusus.</p>
+                        <a href="#" class="portfolio-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="makanan">
+                    <img src="https://images.unsplash.com/photo-1608190003443-86b12a5a5c5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kemasan Makanan Ringan" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kemasan Makanan Ringan</h3>
+                        <p class="portfolio-desc">Kemasan praktis untuk produk makanan ringan dengan desain eye-catching.</p>
+                        <a href="#" class="portfolio-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="retail">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kemasan Kosmetik" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Kemasan Produk Kosmetik</h3>
+                        <p class="portfolio-desc">Kemasan elegan untuk produk kosmetik dengan cetakan berkualitas tinggi.</p>
+                        <a href="#" class="portfolio-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Formulir Pemesanan</h2>
+                <p>Isi formulir di bawah ini untuk melakukan pemesanan atau konsultasi produk kemasan karton</p>
+            </div>
+            
+            <form id="orderForm" class="order-form fade-in">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Nama Perusahaan</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon/WhatsApp <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="address">Alamat Pengiriman <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <span class="error-message" id="addressError"></span>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="boxType">Jenis Kardus <span class="required">*</span></label>
+                        <select id="boxType" name="boxType" required>
+                            <option value="">Pilih Jenis Kardus</option>
+                            <option value="RSC">Regular Slotted Container (RSC)</option>
+                            <option value="FOL">Full Overlap Container (FOL)</option>
+                            <option value="Die-Cut">Kardus Die-Cut</option>
+                            <option value="Telescope">Kardus Telescope</option>
+                            <option value="Folder">Kardus Tipe Folder</option>
+                            <option value="Display">Kardus Display</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                        <span class="error-message" id="boxTypeError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="quantity">Jumlah Pesanan (pcs) <span class="required">*</span></label>
+                        <input type="number" id="quantity" name="quantity" min="100" required>
+                        <span class="error-message" id="quantityError"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="specifications">Spesifikasi Teknis (ukuran, ketebalan, dll)</label>
+                    <textarea id="specifications" name="specifications" rows="3" placeholder="Contoh: 30x20x10 cm, ketebalan 3mm, full color printing"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Pesan Tambahan</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Jelaskan kebutuhan spesifik Anda atau pertanyaan lainnya"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="fileUpload">Unggah File Desain (jika ada)</label>
+                    <input type="file" id="fileUpload" name="fileUpload" accept=".jpg,.jpeg,.png,.pdf,.ai,.eps">
+                    <small>Format file: JPG, PNG, PDF, AI, EPS (maks. 5MB)</small>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-submit">Kirim Pesanan</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="lokasi" class="map-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Lokasi Kami</h2>
+                <p>Kunjungi kantor dan pabrik kami untuk konsultasi langsung mengenai kebutuhan kemasan karton Anda</p>
+            </div>
+            
+            <div class="map-container fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.952912030559!2d107.4657114!3d-6.3833566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6973b364eefa9d%3A0xcfc4b5a5606d9d3d!2sPT.%20INSAKO%20JAYA%20SEJAHTERA!5e0!3m2!1sen!2sid!4v1724512345678!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="address-info fade-in">
+                <p><strong>Alamat:</strong> Jl. Raya Industri No. 123, Kawasan Industri Modern, Karawang, Jawa Barat 41361</p>
+                <p><strong>Jam Operasional:</strong> Senin - Jumat: 08:00 - 17:00 WIB | Sabtu: 08:00 - 14:00 WIB</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Layanan Kami</h2>
+                <p>Berbagai layanan yang kami tawarkan untuk memenuhi kebutuhan kemasan karton Anda</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Desain Custom</h3>
+                    <p>Layanan desain kemasan kustom sesuai dengan kebutuhan dan identitas brand Anda</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Percetakan Berkualitas</h3>
+                    <p>Percetakan dengan teknologi terbaru untuk hasil yang tajam dan warna yang akurat</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Produksi Massal</h3>
+                    <p>Kemampuan produksi dalam skala besar dengan konsistensi kualitas terjamin</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Pengiriman Nasional</h3>
+                    <p>Layanan pengiriman ke seluruh wilayah Indonesia dengan mitra logistik terpercaya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">Siap Meningkatkan Bisnis Anda dengan Kemasan Berkualitas?</h2>
+            <p class="fade-in">Konsultasikan kebutuhan kemasan karton Anda dengan tim ahli kami dan dapatkan penawaran terbaik hari ini</p>
+            <a href="#order" class="btn btn-light fade-in">Konsultasi Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column fade-in">
+                    <h3>PT. Insako Jaya Sejahtera</h3>
+                    <p>Spesialis kemasan karton custom berkualitas tinggi dengan pengalaman lebih dari 10 tahun melayani berbagai industri di Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column fade-in">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Raya Industri No. 123, Karawang, Jawa Barat</p>
+                    <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                    <p><i class="fas fa-mobile-alt"></i> +62 812-3456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@insakojayasejahtera.com</p>
+                </div>
+                
+                <div class="footer-column fade-in">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#order">Pesan Sekarang</a></li>
+                        <li><a href="#lokasi">Lokasi</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 PT. Insako Jaya Sejahtera. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Pesanan Terkirim!</h2>
+            <p>Terima kasih telah mengirimkan pesanan. Tim kami akan menghubungi Anda dalam waktu 1x24 jam untuk konfirmasi dan diskusi lebih lanjut.</p>
+            <button class="btn btn-confirm" id="modalConfirm">Mengerti</button>
+        </div>
+    </div>
+
+    <script>
+        // Slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Show selected slide
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            showSlide(next);
+        }
+        
+        // Auto advance slides
+        setInterval(nextSlide, 5000);
+        
+        // Add click events to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Form validation
+        const orderForm = document.getElementById('orderForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const addressInput = document.getElementById('address');
+        const boxTypeInput = document.getElementById('boxType');
+        const quantityInput = document.getElementById('quantity');
+        
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const phoneError = document.getElementById('phoneError');
+        const addressError = document.getElementById('addressError');
+        const boxTypeError = document.getElementById('boxTypeError');
+        const quantityError = document.getElementById('quantityError');
+        
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Reset error messages
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            addressError.textContent = '';
+            boxTypeError.textContent = '';
+            quantityError.textContent = '';
+            
+            // Validate name
+            if (nameInput.value.trim() === '') {
+                nameError.textContent = 'Nama lengkap harus diisi';
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.textContent = 'Format email tidak valid';
+                isValid = false;
+            }
+            
+            // Validate phone
+            const phonePattern = /^[\+]?[0-9]{8,15}$/;
+            if (!phonePattern.test(phoneInput.value.replace(/\s/g, ''))) {
+                phoneError.textContent = 'Format nomor telepon tidak valid';
+                isValid = false;
+            }
+            
+            // Validate address
+            if (addressInput.value.trim() === '') {
+                addressError.textContent = 'Alamat pengiriman harus diisi';
+                isValid = false;
+            }
+            
+            // Validate box type
+            if (boxTypeInput.value === '') {
+                boxTypeError.textContent = 'Jenis kardus harus dipilih';
+                isValid = false;
+            }
+            
+            // Validate quantity
+            if (quantityInput.value < 100) {
+                quantityError.textContent = 'Minimal pemesanan 100 pcs';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success modal
+                document.getElementById('successModal').style.display = 'flex';
+                document.getElementById('successModal').classList.add('active');
+            }
+        });
+        
+        // Modal functionality
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+            document.getElementById('successModal').classList.remove('active');
+        });
+        
+        document.getElementById('modalConfirm').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+            document.getElementById('successModal').classList.remove('active');
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('successModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+            }
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Get filter value
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Show/hide portfolio items based on filter
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+            updateThemeIcon();
+        } else {
+            // Check if user prefers dark mode
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.body.classList.toggle('dark-mode', prefersDark);
+            localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+            updateThemeIcon();
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+        
+        // Update theme icon based on current mode
+        function updateThemeIcon() {
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            if (isDarkMode) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+        
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            // Only change if user hasn't explicitly set a preference
+            if (!localStorage.getItem('theme')) {
+                document.body.classList.toggle('dark-mode', e.matches);
+                updateThemeIcon();
+            }
+        });
+        
+        // Add fade-in animation on scroll
+        function checkFade() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initial check
+        window.addEventListener('load', checkFade);
+        window.addEventListener('scroll', checkFade);
+        
+        // Initialize all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+    </script>
+</body>
+</html>
